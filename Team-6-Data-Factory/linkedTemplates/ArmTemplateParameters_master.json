@@ -1,0 +1,57 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "Team-6-Data-Factory"
+		},
+		"AzureBlobStorage1_connectionString": {
+			"value": ""
+		},
+		"AzureDataLakeStorage1_accountKey": {
+			"value": ""
+		},
+		"Finance_Historical_Data_Output_accountKey": {
+			"value": ""
+		},
+		"NewsAPI_accountKey": {
+			"value": ""
+		},
+		"AAPL_properties_typeProperties_url": {
+			"value": "https://www.alphavantage.co/query?function=NEWS_SENTIMENT&tickers=AAPL&apikey=5OPV9WQVZ8HF8FS&INTERVAL=60min"
+		},
+		"Alpha_Vantage_Historical _Finance_Data_properties_typeProperties_url": {
+			"value": "https://www.alphavantage.co"
+		},
+		"AzureDataLakeStorage1_properties_typeProperties_url": {
+			"value": "https://team6storageaccount.dfs.core.windows.net/"
+		},
+		"Finance_Historical_Data_Output_properties_typeProperties_url": {
+			"value": "https://team6storageaccount.dfs.core.windows.net/"
+		},
+		"INTC_properties_typeProperties_url": {
+			"value": "https://www.alphavantage.co/query?function=NEWS_SENTIMENT&tickers=INTC&apikey=5OPV9WQVZ8HF8FS&INTERVAL=60min"
+		},
+		"LAZR_properties_typeProperties_url": {
+			"value": "https://www.alphavantage.co/query?function=NEWS_SENTIMENT&tickers=LAZR&apikey=5OPV9WQVZ8HF8FS&INTERVAL=60min"
+		},
+		"NVDA_properties_typeProperties_url": {
+			"value": "https://www.alphavantage.co/query?function=NEWS_SENTIMENT&tickers=NVDA&apikey=5OPV9WQVZ8HF8FS&INTERVAL=60min"
+		},
+		"NewsAPI_properties_typeProperties_url": {
+			"value": "https://team6storageaccount.dfs.core.windows.net/"
+		},
+		"TSLA_properties_typeProperties_url": {
+			"value": "https://www.alphavantage.co/query?function=NEWS_SENTIMENT&tickers=TSLA&apikey=5OPV9WQVZ8HF8FS&INTERVAL=60min"
+		},
+		"Yahoo_Finance_Historical_Data_properties_typeProperties_url": {
+			"value": "https://query1.finance.yahoo.com"
+		},
+		"containerUri": {
+			"value": ""
+		},
+		"containerSasToken": {
+			"value": ""
+		}
+	}
+}
