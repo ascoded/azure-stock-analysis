@@ -1,0 +1,22 @@
+{
+	"name": "Finance_Historical_Data_Output",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Yahoo_Finance_Historical_Data",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "HttpServerLocation",
+				"relativeUrl": {
+					"value": "v7/finance/download/AAPL?period1=1609459200&period2=1640995200&interval=1d&events=history\n",
+					"type": "Expression"
+				}
+			}
+		},
+		"schema": {}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}
