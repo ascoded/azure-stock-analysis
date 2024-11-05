@@ -13,6 +13,110 @@
 	},
 	"resources": [
 		{
+			"name": "[concat(parameters('factoryName'), '/Sink_Data_INTC')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "NewsAPI1",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "Json",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobFSLocation",
+						"fileName": {
+							"value": "concat('INTC', '_', formatDateTime(utcNow(), 'yyyy-MM-dd'), '.csv')\n",
+							"type": "Expression"
+						},
+						"folderPath": "Bronze/INTC",
+						"fileSystem": "storage"
+					}
+				},
+				"schema": {}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/Sink_Data_TSLA')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "NewsAPI1",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "Json",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobFSLocation",
+						"fileName": {
+							"value": "concat('TSLA', '_', formatDateTime(utcNow(), 'yyyy-MM-dd'), '.csv')\n",
+							"type": "Expression"
+						},
+						"folderPath": "Bronze/TSLA",
+						"fileSystem": "storage"
+					}
+				},
+				"schema": {}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/Sink_Data_LAZR')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "NewsAPI1",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "Json",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobFSLocation",
+						"fileName": {
+							"value": "concat('LAZR', '_', formatDateTime(utcNow(), 'yyyy-MM-dd'), '.csv')\n",
+							"type": "Expression"
+						},
+						"folderPath": "Bronze/LAZR",
+						"fileSystem": "storage"
+					}
+				},
+				"schema": {}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/Sink_Data_NVDA')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "NewsAPI1",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "Json",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobFSLocation",
+						"fileName": {
+							"value": "concat('NVDA', '_', formatDateTime(utcNow(), 'yyyy-MM-dd'), '.csv')\n",
+							"type": "Expression"
+						},
+						"folderPath": "Bronze/NVDA",
+						"fileSystem": "storage"
+					}
+				},
+				"schema": {}
+			},
+			"dependsOn": []
+		},
+		{
 			"name": "[concat(parameters('factoryName'), '/Alpha_Vantage_Historical_Finance_Data_Pipeline')]",
 			"type": "Microsoft.DataFactory/factories/pipelines",
 			"apiVersion": "2018-06-01",
@@ -61,7 +165,7 @@
 						],
 						"outputs": [
 							{
-								"referenceName": "Sink_Data",
+								"referenceName": "Sink_Data_AAPL",
 								"type": "DatasetReference",
 								"parameters": {}
 							}
@@ -108,7 +212,8 @@
 							"sink": {
 								"type": "JsonSink",
 								"storeSettings": {
-									"type": "AzureBlobFSWriteSettings"
+									"type": "AzureBlobFSWriteSettings",
+									"copyBehavior": "MergeFiles"
 								},
 								"formatSettings": {
 									"type": "JsonWriteSettings"
@@ -125,7 +230,7 @@
 						],
 						"outputs": [
 							{
-								"referenceName": "Sink_Data",
+								"referenceName": "Sink_Data_AAPL",
 								"type": "DatasetReference",
 								"parameters": {}
 							}
@@ -157,7 +262,8 @@
 							"sink": {
 								"type": "JsonSink",
 								"storeSettings": {
-									"type": "AzureBlobFSWriteSettings"
+									"type": "AzureBlobFSWriteSettings",
+									"copyBehavior": "MergeFiles"
 								},
 								"formatSettings": {
 									"type": "JsonWriteSettings"
@@ -174,7 +280,7 @@
 						],
 						"outputs": [
 							{
-								"referenceName": "Sink_Data",
+								"referenceName": "Sink_Data_TSLA",
 								"type": "DatasetReference",
 								"parameters": {}
 							}
@@ -206,7 +312,8 @@
 							"sink": {
 								"type": "JsonSink",
 								"storeSettings": {
-									"type": "AzureBlobFSWriteSettings"
+									"type": "AzureBlobFSWriteSettings",
+									"copyBehavior": "MergeFiles"
 								},
 								"formatSettings": {
 									"type": "JsonWriteSettings"
@@ -223,7 +330,7 @@
 						],
 						"outputs": [
 							{
-								"referenceName": "Sink_Data",
+								"referenceName": "Sink_Data_NVDA",
 								"type": "DatasetReference",
 								"parameters": {}
 							}
@@ -255,7 +362,8 @@
 							"sink": {
 								"type": "JsonSink",
 								"storeSettings": {
-									"type": "AzureBlobFSWriteSettings"
+									"type": "AzureBlobFSWriteSettings",
+									"copyBehavior": "MergeFiles"
 								},
 								"formatSettings": {
 									"type": "JsonWriteSettings"
@@ -272,7 +380,7 @@
 						],
 						"outputs": [
 							{
-								"referenceName": "Sink_Data",
+								"referenceName": "Sink_Data_LAZR",
 								"type": "DatasetReference",
 								"parameters": {}
 							}
@@ -304,7 +412,8 @@
 							"sink": {
 								"type": "JsonSink",
 								"storeSettings": {
-									"type": "AzureBlobFSWriteSettings"
+									"type": "AzureBlobFSWriteSettings",
+									"copyBehavior": "MergeFiles"
 								},
 								"formatSettings": {
 									"type": "JsonWriteSettings"
@@ -321,7 +430,7 @@
 						],
 						"outputs": [
 							{
-								"referenceName": "Sink_Data",
+								"referenceName": "Sink_Data_INTC",
 								"type": "DatasetReference",
 								"parameters": {}
 							}
@@ -334,7 +443,12 @@
 				"annotations": [],
 				"lastPublishTime": "2024-11-02T16:15:49Z"
 			},
-			"dependsOn": []
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/datasets/Sink_Data_TSLA')]",
+				"[concat(variables('factoryId'), '/datasets/Sink_Data_NVDA')]",
+				"[concat(variables('factoryId'), '/datasets/Sink_Data_LAZR')]",
+				"[concat(variables('factoryId'), '/datasets/Sink_Data_INTC')]"
+			]
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/Yahoo_Finance_Historical_Data_Pipeline')]",
@@ -385,7 +499,7 @@
 						],
 						"outputs": [
 							{
-								"referenceName": "Sink_Data",
+								"referenceName": "Sink_Data_AAPL",
 								"type": "DatasetReference",
 								"parameters": {}
 							}
@@ -399,6 +513,45 @@
 				"lastPublishTime": "2024-10-20T20:16:20Z"
 			},
 			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/dailyrun')]",
+			"type": "Microsoft.DataFactory/factories/triggers",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"runtimeState": "Started",
+				"pipelines": [
+					{
+						"pipelineReference": {
+							"referenceName": "Alpha_Vantage_News_API",
+							"type": "PipelineReference"
+						},
+						"parameters": {}
+					}
+				],
+				"type": "ScheduleTrigger",
+				"typeProperties": {
+					"recurrence": {
+						"frequency": "Day",
+						"interval": 1,
+						"startTime": "2024-11-05T23:48:00",
+						"endTime": "2024-12-20T23:48:00",
+						"timeZone": "Eastern Standard Time",
+						"schedule": {
+							"minutes": [
+								0
+							],
+							"hours": [
+								17
+							]
+						}
+					}
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/pipelines/Alpha_Vantage_News_API')]"
+			]
 		}
 	]
 }

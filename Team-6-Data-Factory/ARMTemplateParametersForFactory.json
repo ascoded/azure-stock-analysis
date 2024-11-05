@@ -44,14 +44,14 @@
 		"NewsAPI_properties_typeProperties_url": {
 			"value": "https://team6storageaccount.dfs.core.windows.net/"
 		},
+		"NewsAPI1_properties_typeProperties_url": {
+			"value": "https://team6storageaccount1.dfs.core.windows.net/"
+		},
 		"TSLA_properties_typeProperties_url": {
 			"value": "https://www.alphavantage.co/query?function=NEWS_SENTIMENT&tickers=TSLA&apikey=5OPV9WQVZ8HF8FS&INTERVAL=60min"
 		},
 		"Yahoo_Finance_Historical_Data_properties_typeProperties_url": {
 			"value": "https://query1.finance.yahoo.com"
-		},
-		"NewsAPI1_properties_typeProperties_url": {
-			"value": "https://team6storageaccount1.dfs.core.windows.net/"
 		}
 	}
 }

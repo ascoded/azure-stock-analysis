@@ -59,6 +59,10 @@
 			"type": "string",
 			"defaultValue": "https://team6storageaccount.dfs.core.windows.net/"
 		},
+		"NewsAPI1_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://team6storageaccount1.dfs.core.windows.net/"
+		},
 		"TSLA_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://www.alphavantage.co/query?function=NEWS_SENTIMENT&tickers=TSLA&apikey=5OPV9WQVZ8HF8FS&INTERVAL=60min"
@@ -66,10 +70,6 @@
 		"Yahoo_Finance_Historical_Data_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://query1.finance.yahoo.com"
-		},
-		"NewsAPI1_properties_typeProperties_url": {
-			"type": "string",
-			"defaultValue": "https://team6storageaccount1.dfs.core.windows.net/"
 		},
 		"containerUri": {
 			"type": "string",
@@ -137,14 +137,14 @@
 					"NewsAPI_properties_typeProperties_url": {
 						"value": "[parameters('NewsAPI_properties_typeProperties_url')]"
 					},
+					"NewsAPI1_properties_typeProperties_url": {
+						"value": "[parameters('NewsAPI1_properties_typeProperties_url')]"
+					},
 					"TSLA_properties_typeProperties_url": {
 						"value": "[parameters('TSLA_properties_typeProperties_url')]"
 					},
 					"Yahoo_Finance_Historical_Data_properties_typeProperties_url": {
 						"value": "[parameters('Yahoo_Finance_Historical_Data_properties_typeProperties_url')]"
-					},
-					"NewsAPI1_properties_typeProperties_url": {
-						"value": "[parameters('NewsAPI1_properties_typeProperties_url')]"
 					}
 				}
 			},

@@ -59,6 +59,10 @@
 			"type": "string",
 			"defaultValue": "https://team6storageaccount.dfs.core.windows.net/"
 		},
+		"NewsAPI1_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://team6storageaccount1.dfs.core.windows.net/"
+		},
 		"TSLA_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://www.alphavantage.co/query?function=NEWS_SENTIMENT&tickers=TSLA&apikey=5OPV9WQVZ8HF8FS&INTERVAL=60min"
@@ -66,10 +70,6 @@
 		"Yahoo_Finance_Historical_Data_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://query1.finance.yahoo.com"
-		},
-		"NewsAPI1_properties_typeProperties_url": {
-			"type": "string",
-			"defaultValue": "https://team6storageaccount1.dfs.core.windows.net/"
 		}
 	},
 	"variables": {
@@ -216,6 +216,23 @@
 			"dependsOn": []
 		},
 		{
+			"name": "[concat(parameters('factoryName'), '/NewsAPI1')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureBlobFS",
+				"typeProperties": {
+					"url": "[parameters('NewsAPI1_properties_typeProperties_url')]",
+					"accountKey": {
+						"type": "SecureString",
+						"value": "[parameters('NewsAPI1_accountKey')]"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
 			"name": "[concat(parameters('factoryName'), '/TSLA')]",
 			"type": "Microsoft.DataFactory/factories/linkedServices",
 			"apiVersion": "2018-06-01",
@@ -241,23 +258,6 @@
 					"url": "[parameters('Yahoo_Finance_Historical_Data_properties_typeProperties_url')]",
 					"enableServerCertificateValidation": true,
 					"authenticationType": "Anonymous"
-				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/NewsAPI1')]",
-			"type": "Microsoft.DataFactory/factories/linkedServices",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"annotations": [],
-				"type": "AzureBlobFS",
-				"typeProperties": {
-					"url": "[parameters('NewsAPI1_properties_typeProperties_url')]",
-					"accountKey": {
-						"type": "SecureString",
-						"value": "[parameters('NewsAPI1_accountKey')]"
-					}
 				}
 			},
 			"dependsOn": []
@@ -400,7 +400,7 @@
 			]
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/Sink_Data')]",
+			"name": "[concat(parameters('factoryName'), '/Sink_Data_AAPL')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
 			"properties": {
@@ -413,7 +413,11 @@
 				"typeProperties": {
 					"location": {
 						"type": "AzureBlobFSLocation",
-						"folderPath": "Bronze",
+						"fileName": {
+							"value": "concat('AAPL', '_', formatDateTime(utcNow(), 'yyyy-MM-dd'), '.csv')\n",
+							"type": "Expression"
+						},
+						"folderPath": "Bronze/AAPL",
 						"fileSystem": "storage"
 					}
 				},
