@@ -27,7 +27,7 @@
 					"location": {
 						"type": "AzureBlobFSLocation",
 						"fileName": {
-							"value": "concat('INTC', '_', formatDateTime(utcNow(), 'yyyy-MM-dd'), '.csv')\n",
+							"value": "concat('INTC', '_', formatDateTime(utcNow(), 'yyyyMMdd'), '.csv')\n",
 							"type": "Expression"
 						},
 						"folderPath": "Bronze/INTC",
@@ -53,7 +53,7 @@
 					"location": {
 						"type": "AzureBlobFSLocation",
 						"fileName": {
-							"value": "concat('TSLA', '_', formatDateTime(utcNow(), 'yyyy-MM-dd'), '.csv')\n",
+							"value": "concat('TSLA', '_', formatDateTime(utcNow(), 'yyyyMMdd'), '.csv')\n",
 							"type": "Expression"
 						},
 						"folderPath": "Bronze/TSLA",
@@ -79,7 +79,7 @@
 					"location": {
 						"type": "AzureBlobFSLocation",
 						"fileName": {
-							"value": "concat('LAZR', '_', formatDateTime(utcNow(), 'yyyy-MM-dd'), '.csv')\n",
+							"value": "concat('LAZR', '_', formatDateTime(utcNow(), 'yyyyMMdd'), '.csv')\n",
 							"type": "Expression"
 						},
 						"folderPath": "Bronze/LAZR",
@@ -105,7 +105,7 @@
 					"location": {
 						"type": "AzureBlobFSLocation",
 						"fileName": {
-							"value": "concat('NVDA', '_', formatDateTime(utcNow(), 'yyyy-MM-dd'), '.csv')\n",
+							"value": "concat('NVDA', '_', formatDateTime(utcNow(), 'yyyyMMdd'), '.csv')\n",
 							"type": "Expression"
 						},
 						"folderPath": "Bronze/NVDA",
@@ -263,7 +263,7 @@
 								"type": "JsonSink",
 								"storeSettings": {
 									"type": "AzureBlobFSWriteSettings",
-									"copyBehavior": "MergeFiles"
+									"copyBehavior": "FlattenHierarchy"
 								},
 								"formatSettings": {
 									"type": "JsonWriteSettings"
