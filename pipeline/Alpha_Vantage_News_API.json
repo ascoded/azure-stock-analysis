@@ -91,7 +91,7 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "Sink_Data_AAPL",
+						"referenceName": "Sink_Data_TSLA",
 						"type": "DatasetReference"
 					}
 				]
@@ -138,7 +138,7 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "Sink_Data_AAPL",
+						"referenceName": "NVDA",
 						"type": "DatasetReference"
 					}
 				]

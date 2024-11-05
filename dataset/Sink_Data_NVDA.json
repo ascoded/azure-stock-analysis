@@ -1,5 +1,5 @@
 {
-	"name": "Sink_Data_copy4",
+	"name": "Sink_Data_NVDA",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "NewsAPI1",
@@ -10,7 +10,7 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"folderPath": "Bronze",
+				"folderPath": "Bronze/NVDA",
 				"fileSystem": "storage"
 			}
 		},
