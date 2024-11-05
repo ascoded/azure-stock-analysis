@@ -141,7 +141,7 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "NVDA",
+						"referenceName": "Sink_Data_NVDA",
 						"type": "DatasetReference"
 					}
 				]
