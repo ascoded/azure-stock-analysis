@@ -44,7 +44,7 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "Sink_Data",
+						"referenceName": "Sink_Data_AAPL",
 						"type": "DatasetReference"
 					}
 				]
@@ -91,7 +91,7 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "Sink_Data",
+						"referenceName": "Sink_Data_AAPL",
 						"type": "DatasetReference"
 					}
 				]
@@ -138,7 +138,7 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "Sink_Data",
+						"referenceName": "Sink_Data_AAPL",
 						"type": "DatasetReference"
 					}
 				]
@@ -185,7 +185,7 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "Sink_Data",
+						"referenceName": "Sink_Data_AAPL",
 						"type": "DatasetReference"
 					}
 				]
@@ -232,7 +232,7 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "Sink_Data",
+						"referenceName": "Sink_Data_AAPL",
 						"type": "DatasetReference"
 					}
 				]
