@@ -185,7 +185,7 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "Sink_Data_AAPL",
+						"referenceName": "Sink_Data_LAZR",
 						"type": "DatasetReference"
 					}
 				]
@@ -232,7 +232,7 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "Sink_Data_AAPL",
+						"referenceName": "Sink_Data_INTC",
 						"type": "DatasetReference"
 					}
 				]
