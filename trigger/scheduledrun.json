@@ -1,0 +1,26 @@
+{
+	"name": "scheduledrun",
+	"properties": {
+		"description": "Runs pipeline every day to gather sentiment data for analysis",
+		"annotations": [],
+		"runtimeState": "Started",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "Alpha_Vantage_News_API",
+					"type": "PipelineReference"
+				}
+			}
+		],
+		"type": "ScheduleTrigger",
+		"typeProperties": {
+			"recurrence": {
+				"frequency": "Day",
+				"interval": 1,
+				"startTime": "2024-11-06T18:23:00",
+				"endTime": "2024-12-20T18:23:00",
+				"timeZone": "Eastern Standard Time"
+			}
+		}
+	}
+}
