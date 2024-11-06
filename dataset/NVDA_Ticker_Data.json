@@ -1,0 +1,19 @@
+{
+	"name": "NVDA_Ticker_Data",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "NewsAPI1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"folderPath": "Bronze/Ticker_Data/NVDA_Data",
+				"fileSystem": "storage"
+			}
+		},
+		"schema": {}
+	}
+}

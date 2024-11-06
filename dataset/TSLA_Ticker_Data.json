@@ -1,0 +1,107 @@
+{
+	"name": "TSLA_Ticker_Data",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "NewsAPI1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"folderPath": "Bronze/TSLA",
+				"fileSystem": "storage"
+			}
+		},
+		"schema": {
+			"type": "object",
+			"properties": {
+				"items": {
+					"type": "string"
+				},
+				"sentiment_score_definition": {
+					"type": "string"
+				},
+				"relevance_score_definition": {
+					"type": "string"
+				},
+				"feed": {
+					"type": "array",
+					"items": {
+						"type": "object",
+						"properties": {
+							"title": {
+								"type": "string"
+							},
+							"url": {
+								"type": "string"
+							},
+							"time_published": {
+								"type": "string"
+							},
+							"authors": {
+								"type": "array"
+							},
+							"summary": {
+								"type": "string"
+							},
+							"banner_image": {
+								"type": "null"
+							},
+							"source": {
+								"type": "string"
+							},
+							"category_within_source": {
+								"type": "string"
+							},
+							"source_domain": {
+								"type": "string"
+							},
+							"topics": {
+								"type": "array",
+								"items": {
+									"type": "object",
+									"properties": {
+										"topic": {
+											"type": "string"
+										},
+										"relevance_score": {
+											"type": "string"
+										}
+									}
+								}
+							},
+							"overall_sentiment_score": {
+								"type": "number"
+							},
+							"overall_sentiment_label": {
+								"type": "string"
+							},
+							"ticker_sentiment": {
+								"type": "array",
+								"items": {
+									"type": "object",
+									"properties": {
+										"ticker": {
+											"type": "string"
+										},
+										"relevance_score": {
+											"type": "string"
+										},
+										"ticker_sentiment_score": {
+											"type": "string"
+										},
+										"ticker_sentiment_label": {
+											"type": "string"
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
