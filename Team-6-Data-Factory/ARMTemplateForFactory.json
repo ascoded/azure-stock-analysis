@@ -176,7 +176,7 @@
 								"type": "JsonSink",
 								"storeSettings": {
 									"type": "AzureBlobFSWriteSettings",
-									"copyBehavior": "MergeFiles"
+									"copyBehavior": "FlattenHierarchy"
 								},
 								"formatSettings": {
 									"type": "JsonWriteSettings"
@@ -226,7 +226,7 @@
 								"type": "JsonSink",
 								"storeSettings": {
 									"type": "AzureBlobFSWriteSettings",
-									"copyBehavior": "MergeFiles"
+									"copyBehavior": "FlattenHierarchy"
 								},
 								"formatSettings": {
 									"type": "JsonWriteSettings"
@@ -276,7 +276,7 @@
 								"type": "JsonSink",
 								"storeSettings": {
 									"type": "AzureBlobFSWriteSettings",
-									"copyBehavior": "MergeFiles"
+									"copyBehavior": "FlattenHierarchy"
 								},
 								"formatSettings": {
 									"type": "JsonWriteSettings"
@@ -326,7 +326,7 @@
 								"type": "JsonSink",
 								"storeSettings": {
 									"type": "AzureBlobFSWriteSettings",
-									"copyBehavior": "MergeFiles"
+									"copyBehavior": "FlattenHierarchy"
 								},
 								"formatSettings": {
 									"type": "JsonWriteSettings"
@@ -376,7 +376,7 @@
 								"type": "JsonSink",
 								"storeSettings": {
 									"type": "AzureBlobFSWriteSettings",
-									"copyBehavior": "MergeFiles"
+									"copyBehavior": "FlattenHierarchy"
 								},
 								"formatSettings": {
 									"type": "JsonWriteSettings"
@@ -662,7 +662,7 @@
 					"location": {
 						"type": "AzureBlobFSLocation",
 						"fileName": {
-							"value": "concat('AAPL', '_', formatDateTime(utcNow(), 'yyyyMMdd'), '.csv')\n",
+							"value": "@concat('AAPL_', formatDateTime(utcNow(), 'yyyyddMM'), '.csv')",
 							"type": "Expression"
 						},
 						"folderPath": "Bronze/AAPL",
@@ -690,7 +690,7 @@
 					"location": {
 						"type": "AzureBlobFSLocation",
 						"fileName": {
-							"value": "concat('INTC', '_', formatDateTime(utcNow(), 'yyyyMMdd'), '.csv')\n",
+							"value": "@concat('INTC_', formatDateTime(utcNow(), 'yyyyddMM'), '.csv')",
 							"type": "Expression"
 						},
 						"folderPath": "Bronze/INTC",
@@ -718,7 +718,7 @@
 					"location": {
 						"type": "AzureBlobFSLocation",
 						"fileName": {
-							"value": "concat('LAZR', '_', formatDateTime(utcNow(), 'yyyyMMdd'), '.csv')\n",
+							"value": "@concat('LAZR_', formatDateTime(utcNow(), 'yyyyddMM'), '.csv')",
 							"type": "Expression"
 						},
 						"folderPath": "Bronze/LAZR",
@@ -746,7 +746,7 @@
 					"location": {
 						"type": "AzureBlobFSLocation",
 						"fileName": {
-							"value": "concat('NVDA', '_', formatDateTime(utcNow(), 'yyyyMMdd'), '.csv')\n",
+							"value": "@concat('NVDA_', formatDateTime(utcNow(), 'yyyyddMM'), '.csv')",
 							"type": "Expression"
 						},
 						"folderPath": "Bronze/NVDA",
@@ -774,33 +774,9 @@
 					"location": {
 						"type": "AzureBlobFSLocation",
 						"fileName": {
-							"value": "concat('TSLA', '_', formatDateTime(utcNow(), 'yyyyMMdd'), '.csv')\n",
+							"value": "@concat('TSLA_', formatDateTime(utcNow(), 'yyyyddMM'), '.csv')",
 							"type": "Expression"
 						},
-						"folderPath": "Bronze/TSLA",
-						"fileSystem": "storage"
-					}
-				},
-				"schema": {}
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/NewsAPI1')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/Sink_Data_copy2')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "NewsAPI1",
-					"type": "LinkedServiceReference"
-				},
-				"annotations": [],
-				"type": "Json",
-				"typeProperties": {
-					"location": {
-						"type": "AzureBlobFSLocation",
 						"folderPath": "Bronze/TSLA",
 						"fileSystem": "storage"
 					}
