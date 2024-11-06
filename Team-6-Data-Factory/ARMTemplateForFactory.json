@@ -662,7 +662,7 @@
 					"location": {
 						"type": "AzureBlobFSLocation",
 						"fileName": {
-							"value": "@concat('AAPL_', formatDateTime(utcNow(), 'yyyyddMM'), '.csv')",
+							"value": "@concat('AAPL_', formatDateTime(utcNow(), 'yyyyddMM'), '.json')",
 							"type": "Expression"
 						},
 						"folderPath": "Bronze/AAPL",
@@ -690,7 +690,7 @@
 					"location": {
 						"type": "AzureBlobFSLocation",
 						"fileName": {
-							"value": "@concat('INTC_', formatDateTime(utcNow(), 'yyyyddMM'), '.csv')",
+							"value": "@concat('INTC_', formatDateTime(utcNow(), 'yyyyddMM'), '.json')",
 							"type": "Expression"
 						},
 						"folderPath": "Bronze/INTC",
@@ -718,7 +718,7 @@
 					"location": {
 						"type": "AzureBlobFSLocation",
 						"fileName": {
-							"value": "@concat('LAZR_', formatDateTime(utcNow(), 'yyyyddMM'), '.csv')",
+							"value": "@concat('LAZR_', formatDateTime(utcNow(), 'yyyyddMM'), '.json')",
 							"type": "Expression"
 						},
 						"folderPath": "Bronze/LAZR",
@@ -746,7 +746,7 @@
 					"location": {
 						"type": "AzureBlobFSLocation",
 						"fileName": {
-							"value": "@concat('NVDA_', formatDateTime(utcNow(), 'yyyyddMM'), '.csv')",
+							"value": "@concat('NVDA_', formatDateTime(utcNow(), 'yyyyddMM'), '.json')",
 							"type": "Expression"
 						},
 						"folderPath": "Bronze/NVDA",
@@ -774,7 +774,7 @@
 					"location": {
 						"type": "AzureBlobFSLocation",
 						"fileName": {
-							"value": "@concat('TSLA_', formatDateTime(utcNow(), 'yyyyddMM'), '.csv')",
+							"value": "@concat('TSLA_', formatDateTime(utcNow(), 'yyyyddMM'), '.json')",
 							"type": "Expression"
 						},
 						"folderPath": "Bronze/TSLA",
