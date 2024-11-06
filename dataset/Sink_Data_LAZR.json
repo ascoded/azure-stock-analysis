@@ -11,7 +11,7 @@
 			"location": {
 				"type": "AzureBlobFSLocation",
 				"fileName": {
-					"value": "@concat('LAZR_', formatDateTime(utcNow(), 'yyyyddMM'), '.csv')",
+					"value": "@concat('LAZR_', formatDateTime(utcNow(), 'yyyyddMM'), '.json')",
 					"type": "Expression"
 				},
 				"folderPath": "Bronze/LAZR",
