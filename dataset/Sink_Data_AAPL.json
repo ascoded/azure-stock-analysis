@@ -10,10 +10,6 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"fileName": {
-					"value": "@concat('AAPL_', formatDateTime(utcNow(), 'yyyy-dd-MM'))",
-					"type": "Expression"
-				},
 				"folderPath": "Bronze/AAPL",
 				"fileSystem": "storage"
 			}
