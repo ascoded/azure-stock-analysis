@@ -624,6 +624,30 @@
 			]
 		},
 		{
+			"name": "[concat(parameters('factoryName'), '/Sink_Data')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "NewsAPI1",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "Json",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobFSLocation",
+						"folderPath": "Bronze/AAPL",
+						"fileSystem": "storage"
+					}
+				},
+				"schema": {}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/NewsAPI1')]"
+			]
+		},
+		{
 			"name": "[concat(parameters('factoryName'), '/Sink_Data_AAPL')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
@@ -642,6 +666,142 @@
 							"type": "Expression"
 						},
 						"folderPath": "Bronze/AAPL",
+						"fileSystem": "storage"
+					}
+				},
+				"schema": {}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/NewsAPI1')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/Sink_Data_INTC')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "NewsAPI1",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "Json",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobFSLocation",
+						"fileName": {
+							"value": "concat('INTC', '_', formatDateTime(utcNow(), 'yyyyMMdd'), '.csv')\n",
+							"type": "Expression"
+						},
+						"folderPath": "Bronze/INTC",
+						"fileSystem": "storage"
+					}
+				},
+				"schema": {}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/NewsAPI1')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/Sink_Data_LAZR')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "NewsAPI1",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "Json",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobFSLocation",
+						"fileName": {
+							"value": "concat('LAZR', '_', formatDateTime(utcNow(), 'yyyyMMdd'), '.csv')\n",
+							"type": "Expression"
+						},
+						"folderPath": "Bronze/LAZR",
+						"fileSystem": "storage"
+					}
+				},
+				"schema": {}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/NewsAPI1')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/Sink_Data_NVDA')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "NewsAPI1",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "Json",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobFSLocation",
+						"fileName": {
+							"value": "concat('NVDA', '_', formatDateTime(utcNow(), 'yyyyMMdd'), '.csv')\n",
+							"type": "Expression"
+						},
+						"folderPath": "Bronze/NVDA",
+						"fileSystem": "storage"
+					}
+				},
+				"schema": {}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/NewsAPI1')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/Sink_Data_TSLA')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "NewsAPI1",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "Json",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobFSLocation",
+						"fileName": {
+							"value": "concat('TSLA', '_', formatDateTime(utcNow(), 'yyyyMMdd'), '.csv')\n",
+							"type": "Expression"
+						},
+						"folderPath": "Bronze/TSLA",
+						"fileSystem": "storage"
+					}
+				},
+				"schema": {}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/NewsAPI1')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/Sink_Data_copy2')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "NewsAPI1",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "Json",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobFSLocation",
+						"folderPath": "Bronze/TSLA",
 						"fileSystem": "storage"
 					}
 				},
@@ -860,122 +1020,11 @@
 			"dependsOn": []
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/Sink_Data_INTC')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "NewsAPI1",
-					"type": "LinkedServiceReference"
-				},
-				"annotations": [],
-				"type": "Json",
-				"typeProperties": {
-					"location": {
-						"type": "AzureBlobFSLocation",
-						"fileName": {
-							"value": "concat('INTC', '_', formatDateTime(utcNow(), 'yyyyMMdd'), '.csv')\n",
-							"type": "Expression"
-						},
-						"folderPath": "Bronze/INTC",
-						"fileSystem": "storage"
-					}
-				},
-				"schema": {}
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/NewsAPI1')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/Sink_Data_TSLA')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "NewsAPI1",
-					"type": "LinkedServiceReference"
-				},
-				"annotations": [],
-				"type": "Json",
-				"typeProperties": {
-					"location": {
-						"type": "AzureBlobFSLocation",
-						"fileName": {
-							"value": "concat('TSLA', '_', formatDateTime(utcNow(), 'yyyyMMdd'), '.csv')\n",
-							"type": "Expression"
-						},
-						"folderPath": "Bronze/TSLA",
-						"fileSystem": "storage"
-					}
-				},
-				"schema": {}
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/NewsAPI1')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/Sink_Data_LAZR')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "NewsAPI1",
-					"type": "LinkedServiceReference"
-				},
-				"annotations": [],
-				"type": "Json",
-				"typeProperties": {
-					"location": {
-						"type": "AzureBlobFSLocation",
-						"fileName": {
-							"value": "concat('LAZR', '_', formatDateTime(utcNow(), 'yyyyMMdd'), '.csv')\n",
-							"type": "Expression"
-						},
-						"folderPath": "Bronze/LAZR",
-						"fileSystem": "storage"
-					}
-				},
-				"schema": {}
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/NewsAPI1')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/Sink_Data_NVDA')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "NewsAPI1",
-					"type": "LinkedServiceReference"
-				},
-				"annotations": [],
-				"type": "Json",
-				"typeProperties": {
-					"location": {
-						"type": "AzureBlobFSLocation",
-						"fileName": {
-							"value": "concat('NVDA', '_', formatDateTime(utcNow(), 'yyyyMMdd'), '.csv')\n",
-							"type": "Expression"
-						},
-						"folderPath": "Bronze/NVDA",
-						"fileSystem": "storage"
-					}
-				},
-				"schema": {}
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/NewsAPI1')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/dailyrun')]",
+			"name": "[concat(parameters('factoryName'), '/scheduledrun')]",
 			"type": "Microsoft.DataFactory/factories/triggers",
 			"apiVersion": "2018-06-01",
 			"properties": {
+				"description": "Runs pipeline every day to gather sentiment data for analysis",
 				"annotations": [],
 				"runtimeState": "Started",
 				"pipelines": [
@@ -992,17 +1041,10 @@
 					"recurrence": {
 						"frequency": "Day",
 						"interval": 1,
-						"startTime": "2024-11-05T23:48:00",
-						"endTime": "2024-12-20T23:48:00",
+						"startTime": "2024-11-06T18:23:00",
+						"endTime": "2024-12-20T18:23:00",
 						"timeZone": "Eastern Standard Time",
-						"schedule": {
-							"minutes": [
-								0
-							],
-							"hours": [
-								19
-							]
-						}
+						"schedule": {}
 					}
 				}
 			},
