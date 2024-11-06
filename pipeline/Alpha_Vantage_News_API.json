@@ -35,7 +35,112 @@
 							"type": "JsonWriteSettings"
 						}
 					},
-					"enableStaging": false
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"path": "$['items']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['sentiment_score_definition']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['relevance_score_definition']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['feed'][0]['title']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['feed'][0]['url']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['feed'][0]['time_published']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['feed'][0]['authors'][0]"
+								}
+							},
+							{
+								"source": {
+									"path": "$['feed'][0]['summary']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['feed'][0]['banner_image']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['feed'][0]['source']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['feed'][0]['category_within_source']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['feed'][0]['source_domain']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['feed'][0]['topics'][0]['topic']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['feed'][0]['topics'][0]['relevance_score']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['feed'][0]['overall_sentiment_score']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['feed'][0]['overall_sentiment_label']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['feed'][0]['ticker_sentiment'][0]['ticker']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['feed'][0]['ticker_sentiment'][0]['relevance_score']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['feed'][0]['ticker_sentiment'][0]['ticker_sentiment_score']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['feed'][0]['ticker_sentiment'][0]['ticker_sentiment_label']"
+								}
+							}
+						]
+					}
 				},
 				"inputs": [
 					{
@@ -83,7 +188,172 @@
 							"type": "JsonWriteSettings"
 						}
 					},
-					"enableStaging": false
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"path": "$['items']"
+								},
+								"sink": {
+									"path": "$['items']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['sentiment_score_definition']"
+								},
+								"sink": {
+									"path": "$['sentiment_score_definition']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['relevance_score_definition']"
+								},
+								"sink": {
+									"path": "$['relevance_score_definition']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['feed'][0]['title']"
+								},
+								"sink": {
+									"path": "$['feed'][0]['title']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['feed'][0]['url']"
+								},
+								"sink": {
+									"path": "$['feed'][0]['url']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['feed'][0]['time_published']"
+								},
+								"sink": {
+									"path": "$['feed'][0]['time_published']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['feed'][0]['authors'][0]"
+								},
+								"sink": {
+									"path": "$['feed'][0]['authors'][0]"
+								}
+							},
+							{
+								"source": {
+									"path": "$['feed'][0]['summary']"
+								},
+								"sink": {
+									"path": "$['feed'][0]['summary']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['feed'][0]['banner_image']"
+								},
+								"sink": {
+									"path": "$['feed'][0]['banner_image']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['feed'][0]['source']"
+								},
+								"sink": {
+									"path": "$['feed'][0]['source']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['feed'][0]['category_within_source']"
+								},
+								"sink": {
+									"path": "$['feed'][0]['category_within_source']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['feed'][0]['source_domain']"
+								},
+								"sink": {
+									"path": "$['feed'][0]['source_domain']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['feed'][0]['topics'][0]['topic']"
+								},
+								"sink": {
+									"path": "$['feed'][0]['topics'][0]['topic']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['feed'][0]['topics'][0]['relevance_score']"
+								},
+								"sink": {
+									"path": "$['feed'][0]['topics'][0]['relevance_score']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['feed'][0]['overall_sentiment_score']"
+								},
+								"sink": {
+									"path": "$['feed'][0]['overall_sentiment_score']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['feed'][0]['overall_sentiment_label']"
+								},
+								"sink": {
+									"path": "$['feed'][0]['overall_sentiment_label']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['feed'][0]['ticker_sentiment'][0]['ticker']"
+								},
+								"sink": {
+									"path": "$['feed'][0]['ticker_sentiment'][0]['ticker']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['feed'][0]['ticker_sentiment'][0]['relevance_score']"
+								},
+								"sink": {
+									"path": "$['feed'][0]['ticker_sentiment'][0]['relevance_score']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['feed'][0]['ticker_sentiment'][0]['ticker_sentiment_score']"
+								},
+								"sink": {
+									"path": "$['feed'][0]['ticker_sentiment'][0]['ticker_sentiment_score']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['feed'][0]['ticker_sentiment'][0]['ticker_sentiment_label']"
+								},
+								"sink": {
+									"path": "$['feed'][0]['ticker_sentiment'][0]['ticker_sentiment_label']"
+								}
+							}
+						]
+					}
 				},
 				"inputs": [
 					{
@@ -131,7 +401,172 @@
 							"type": "JsonWriteSettings"
 						}
 					},
-					"enableStaging": false
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"path": "$['items']"
+								},
+								"sink": {
+									"path": "$['items']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['sentiment_score_definition']"
+								},
+								"sink": {
+									"path": "$['sentiment_score_definition']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['relevance_score_definition']"
+								},
+								"sink": {
+									"path": "$['relevance_score_definition']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['feed'][0]['title']"
+								},
+								"sink": {
+									"path": "$['feed'][0]['title']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['feed'][0]['url']"
+								},
+								"sink": {
+									"path": "$['feed'][0]['url']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['feed'][0]['time_published']"
+								},
+								"sink": {
+									"path": "$['feed'][0]['time_published']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['feed'][0]['authors'][0]"
+								},
+								"sink": {
+									"path": "$['feed'][0]['authors'][0]"
+								}
+							},
+							{
+								"source": {
+									"path": "$['feed'][0]['summary']"
+								},
+								"sink": {
+									"path": "$['feed'][0]['summary']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['feed'][0]['banner_image']"
+								},
+								"sink": {
+									"path": "$['feed'][0]['banner_image']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['feed'][0]['source']"
+								},
+								"sink": {
+									"path": "$['feed'][0]['source']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['feed'][0]['category_within_source']"
+								},
+								"sink": {
+									"path": "$['feed'][0]['category_within_source']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['feed'][0]['source_domain']"
+								},
+								"sink": {
+									"path": "$['feed'][0]['source_domain']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['feed'][0]['topics'][0]['topic']"
+								},
+								"sink": {
+									"path": "$['feed'][0]['topics'][0]['topic']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['feed'][0]['topics'][0]['relevance_score']"
+								},
+								"sink": {
+									"path": "$['feed'][0]['topics'][0]['relevance_score']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['feed'][0]['overall_sentiment_score']"
+								},
+								"sink": {
+									"path": "$['feed'][0]['overall_sentiment_score']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['feed'][0]['overall_sentiment_label']"
+								},
+								"sink": {
+									"path": "$['feed'][0]['overall_sentiment_label']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['feed'][0]['ticker_sentiment'][0]['ticker']"
+								},
+								"sink": {
+									"path": "$['feed'][0]['ticker_sentiment'][0]['ticker']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['feed'][0]['ticker_sentiment'][0]['relevance_score']"
+								},
+								"sink": {
+									"path": "$['feed'][0]['ticker_sentiment'][0]['relevance_score']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['feed'][0]['ticker_sentiment'][0]['ticker_sentiment_score']"
+								},
+								"sink": {
+									"path": "$['feed'][0]['ticker_sentiment'][0]['ticker_sentiment_score']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['feed'][0]['ticker_sentiment'][0]['ticker_sentiment_label']"
+								},
+								"sink": {
+									"path": "$['feed'][0]['ticker_sentiment'][0]['ticker_sentiment_label']"
+								}
+							}
+						]
+					}
 				},
 				"inputs": [
 					{
@@ -179,7 +614,172 @@
 							"type": "JsonWriteSettings"
 						}
 					},
-					"enableStaging": false
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"path": "$['items']"
+								},
+								"sink": {
+									"path": "$['items']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['sentiment_score_definition']"
+								},
+								"sink": {
+									"path": "$['sentiment_score_definition']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['relevance_score_definition']"
+								},
+								"sink": {
+									"path": "$['relevance_score_definition']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['feed'][0]['title']"
+								},
+								"sink": {
+									"path": "$['feed'][0]['title']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['feed'][0]['url']"
+								},
+								"sink": {
+									"path": "$['feed'][0]['url']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['feed'][0]['time_published']"
+								},
+								"sink": {
+									"path": "$['feed'][0]['time_published']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['feed'][0]['authors'][0]"
+								},
+								"sink": {
+									"path": "$['feed'][0]['authors'][0]"
+								}
+							},
+							{
+								"source": {
+									"path": "$['feed'][0]['summary']"
+								},
+								"sink": {
+									"path": "$['feed'][0]['summary']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['feed'][0]['banner_image']"
+								},
+								"sink": {
+									"path": "$['feed'][0]['banner_image']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['feed'][0]['source']"
+								},
+								"sink": {
+									"path": "$['feed'][0]['source']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['feed'][0]['category_within_source']"
+								},
+								"sink": {
+									"path": "$['feed'][0]['category_within_source']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['feed'][0]['source_domain']"
+								},
+								"sink": {
+									"path": "$['feed'][0]['source_domain']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['feed'][0]['topics'][0]['topic']"
+								},
+								"sink": {
+									"path": "$['feed'][0]['topics'][0]['topic']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['feed'][0]['topics'][0]['relevance_score']"
+								},
+								"sink": {
+									"path": "$['feed'][0]['topics'][0]['relevance_score']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['feed'][0]['overall_sentiment_score']"
+								},
+								"sink": {
+									"path": "$['feed'][0]['overall_sentiment_score']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['feed'][0]['overall_sentiment_label']"
+								},
+								"sink": {
+									"path": "$['feed'][0]['overall_sentiment_label']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['feed'][0]['ticker_sentiment'][0]['ticker']"
+								},
+								"sink": {
+									"path": "$['feed'][0]['ticker_sentiment'][0]['ticker']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['feed'][0]['ticker_sentiment'][0]['relevance_score']"
+								},
+								"sink": {
+									"path": "$['feed'][0]['ticker_sentiment'][0]['relevance_score']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['feed'][0]['ticker_sentiment'][0]['ticker_sentiment_score']"
+								},
+								"sink": {
+									"path": "$['feed'][0]['ticker_sentiment'][0]['ticker_sentiment_score']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['feed'][0]['ticker_sentiment'][0]['ticker_sentiment_label']"
+								},
+								"sink": {
+									"path": "$['feed'][0]['ticker_sentiment'][0]['ticker_sentiment_label']"
+								}
+							}
+						]
+					}
 				},
 				"inputs": [
 					{
@@ -227,7 +827,172 @@
 							"type": "JsonWriteSettings"
 						}
 					},
-					"enableStaging": false
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"path": "$['items']"
+								},
+								"sink": {
+									"path": "$['items']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['sentiment_score_definition']"
+								},
+								"sink": {
+									"path": "$['sentiment_score_definition']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['relevance_score_definition']"
+								},
+								"sink": {
+									"path": "$['relevance_score_definition']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['feed'][0]['title']"
+								},
+								"sink": {
+									"path": "$['feed'][0]['title']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['feed'][0]['url']"
+								},
+								"sink": {
+									"path": "$['feed'][0]['url']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['feed'][0]['time_published']"
+								},
+								"sink": {
+									"path": "$['feed'][0]['time_published']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['feed'][0]['authors'][0]"
+								},
+								"sink": {
+									"path": "$['feed'][0]['authors'][0]"
+								}
+							},
+							{
+								"source": {
+									"path": "$['feed'][0]['summary']"
+								},
+								"sink": {
+									"path": "$['feed'][0]['summary']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['feed'][0]['banner_image']"
+								},
+								"sink": {
+									"path": "$['feed'][0]['banner_image']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['feed'][0]['source']"
+								},
+								"sink": {
+									"path": "$['feed'][0]['source']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['feed'][0]['category_within_source']"
+								},
+								"sink": {
+									"path": "$['feed'][0]['category_within_source']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['feed'][0]['source_domain']"
+								},
+								"sink": {
+									"path": "$['feed'][0]['source_domain']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['feed'][0]['topics'][0]['topic']"
+								},
+								"sink": {
+									"path": "$['feed'][0]['topics'][0]['topic']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['feed'][0]['topics'][0]['relevance_score']"
+								},
+								"sink": {
+									"path": "$['feed'][0]['topics'][0]['relevance_score']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['feed'][0]['overall_sentiment_score']"
+								},
+								"sink": {
+									"path": "$['feed'][0]['overall_sentiment_score']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['feed'][0]['overall_sentiment_label']"
+								},
+								"sink": {
+									"path": "$['feed'][0]['overall_sentiment_label']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['feed'][0]['ticker_sentiment'][0]['ticker']"
+								},
+								"sink": {
+									"path": "$['feed'][0]['ticker_sentiment'][0]['ticker']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['feed'][0]['ticker_sentiment'][0]['relevance_score']"
+								},
+								"sink": {
+									"path": "$['feed'][0]['ticker_sentiment'][0]['relevance_score']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['feed'][0]['ticker_sentiment'][0]['ticker_sentiment_score']"
+								},
+								"sink": {
+									"path": "$['feed'][0]['ticker_sentiment'][0]['ticker_sentiment_score']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['feed'][0]['ticker_sentiment'][0]['ticker_sentiment_label']"
+								},
+								"sink": {
+									"path": "$['feed'][0]['ticker_sentiment'][0]['ticker_sentiment_label']"
+								}
+							}
+						]
+					}
 				},
 				"inputs": [
 					{
