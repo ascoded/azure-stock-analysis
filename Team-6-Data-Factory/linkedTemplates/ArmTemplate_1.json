@@ -213,7 +213,7 @@
 								"type": "JsonSink",
 								"storeSettings": {
 									"type": "AzureBlobFSWriteSettings",
-									"copyBehavior": "MergeFiles"
+									"copyBehavior": "FlattenHierarchy"
 								},
 								"formatSettings": {
 									"type": "JsonWriteSettings"
@@ -313,7 +313,7 @@
 								"type": "JsonSink",
 								"storeSettings": {
 									"type": "AzureBlobFSWriteSettings",
-									"copyBehavior": "MergeFiles"
+									"copyBehavior": "FlattenHierarchy"
 								},
 								"formatSettings": {
 									"type": "JsonWriteSettings"
@@ -363,7 +363,7 @@
 								"type": "JsonSink",
 								"storeSettings": {
 									"type": "AzureBlobFSWriteSettings",
-									"copyBehavior": "MergeFiles"
+									"copyBehavior": "FlattenHierarchy"
 								},
 								"formatSettings": {
 									"type": "JsonWriteSettings"
@@ -413,7 +413,7 @@
 								"type": "JsonSink",
 								"storeSettings": {
 									"type": "AzureBlobFSWriteSettings",
-									"copyBehavior": "MergeFiles"
+									"copyBehavior": "FlattenHierarchy"
 								},
 								"formatSettings": {
 									"type": "JsonWriteSettings"
