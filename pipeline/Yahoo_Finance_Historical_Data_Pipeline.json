@@ -1,5 +1,5 @@
 {
-	"name": "Alpha_Vantage_Historical_Finance_Data_Pipeline",
+	"name": "Yahoo_Finance_Historical_Data_Pipeline",
 	"properties": {
 		"activities": [
 			{
@@ -38,7 +38,7 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "Alpha_Vantage",
+						"referenceName": "Finance_Historical_Data_Output",
 						"type": "DatasetReference"
 					}
 				],
