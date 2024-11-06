@@ -11,7 +11,7 @@
 			"location": {
 				"type": "AzureBlobFSLocation",
 				"fileName": {
-					"value": "concat('TSLA', '_', formatDateTime(utcNow(), 'yyyyMMdd'), '.csv')\n",
+					"value": "@concat('TSLA_', formatDateTime(utcNow(), 'yyyyddMM'), '.csv')",
 					"type": "Expression"
 				},
 				"folderPath": "Bronze/TSLA",

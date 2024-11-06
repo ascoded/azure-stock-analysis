@@ -11,7 +11,7 @@
 			"location": {
 				"type": "AzureBlobFSLocation",
 				"fileName": {
-					"value": "concat('NVDA', '_', formatDateTime(utcNow(), 'yyyyMMdd'), '.csv')\n",
+					"value": "@concat('NVDA_', formatDateTime(utcNow(), 'yyyyddMM'), '.csv')",
 					"type": "Expression"
 				},
 				"folderPath": "Bronze/NVDA",
