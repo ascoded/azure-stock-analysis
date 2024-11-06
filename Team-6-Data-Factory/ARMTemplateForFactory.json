@@ -136,7 +136,7 @@
 					"elapsedTimeMetric": {}
 				},
 				"annotations": [],
-				"lastPublishTime": "2024-10-20T20:16:20Z"
+				"lastPublishTime": "2024-11-05T23:49:41Z"
 			},
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/datasets/Alpha_Vantage')]",
@@ -404,7 +404,7 @@
 					"elapsedTimeMetric": {}
 				},
 				"annotations": [],
-				"lastPublishTime": "2024-11-02T16:15:49Z"
+				"lastPublishTime": "2024-11-06T18:46:07Z"
 			},
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/datasets/AAPL')]",
@@ -479,7 +479,7 @@
 					"elapsedTimeMetric": {}
 				},
 				"annotations": [],
-				"lastPublishTime": "2024-10-20T20:16:20Z"
+				"lastPublishTime": "2024-11-05T23:49:41Z"
 			},
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/datasets/Finance_Historical_Data_Output')]",
@@ -637,7 +637,7 @@
 				"typeProperties": {
 					"location": {
 						"type": "AzureBlobFSLocation",
-						"folderPath": "Bronze/AAPL",
+						"folderPath": "Bronze",
 						"fileSystem": "storage"
 					}
 				},
@@ -1019,8 +1019,7 @@
 						"interval": 1,
 						"startTime": "2024-11-06T18:23:00",
 						"endTime": "2024-12-20T18:23:00",
-						"timeZone": "Eastern Standard Time",
-						"schedule": {}
+						"timeZone": "Eastern Standard Time"
 					}
 				}
 			},
