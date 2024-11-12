@@ -1,0 +1,17 @@
+{
+	"name": "LAZR_Ticker",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LAZR_Ticker",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "HttpServerLocation"
+			}
+		},
+		"schema": {}
+	}
+}

@@ -1,0 +1,17 @@
+{
+	"name": "NVDA_Ticker",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "NVDA_Ticker",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "HttpServerLocation"
+			}
+		},
+		"schema": {}
+	}
+}

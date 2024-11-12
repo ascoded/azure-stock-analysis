@@ -1,0 +1,17 @@
+{
+	"name": "AAPL_Ticker",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "APPL_Ticker",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "HttpServerLocation"
+			}
+		},
+		"schema": {}
+	}
+}

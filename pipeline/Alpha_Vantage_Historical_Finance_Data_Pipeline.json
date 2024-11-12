@@ -38,7 +38,7 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "AAPL",
+						"referenceName": "AAPL_Ticker",
 						"type": "DatasetReference"
 					}
 				],
@@ -85,7 +85,7 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "TSLA",
+						"referenceName": "TSLA_Ticker",
 						"type": "DatasetReference"
 					}
 				],
@@ -132,7 +132,7 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "NVDA",
+						"referenceName": "NVDA_Ticker",
 						"type": "DatasetReference"
 					}
 				],
@@ -179,7 +179,7 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "INTC",
+						"referenceName": "INTC_Ticker",
 						"type": "DatasetReference"
 					}
 				],
@@ -226,7 +226,7 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "LAZR",
+						"referenceName": "LAZR_Ticker",
 						"type": "DatasetReference"
 					}
 				],

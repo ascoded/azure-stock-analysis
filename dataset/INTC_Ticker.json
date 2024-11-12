@@ -1,0 +1,17 @@
+{
+	"name": "INTC_Ticker",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "INTC_Ticker",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "HttpServerLocation"
+			}
+		},
+		"schema": {}
+	}
+}
