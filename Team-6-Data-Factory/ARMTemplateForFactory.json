@@ -29,7 +29,7 @@
 		},
 		"AAPL_properties_typeProperties_url": {
 			"type": "string",
-			"defaultValue": "https://www.alphavantage.co/query?function=NEWS_SENTIMENT&tickers=AAPL&apikey=5OPV9WQVZ8HF8FS&INTERVAL=1min"
+			"defaultValue": "https://www.alphavantage.co/query?function=NEWS_SENTIMENT&tickers=AAPL&apikey=5OPV9WQVZ8HF8FS&INTERVAL=60min"
 		},
 		"Alpha_Vantage_Historical _Finance_Data_properties_typeProperties_url": {
 			"type": "string",
@@ -45,15 +45,15 @@
 		},
 		"INTC_properties_typeProperties_url": {
 			"type": "string",
-			"defaultValue": "https://www.alphavantage.co/query?function=NEWS_SENTIMENT&tickers=INTC&apikey=5OPV9WQVZ8HF8FS&INTERVAL=1min"
+			"defaultValue": "https://www.alphavantage.co/query?function=NEWS_SENTIMENT&tickers=INTC&apikey=5OPV9WQVZ8HF8FS&INTERVAL=60min"
 		},
 		"LAZR_properties_typeProperties_url": {
 			"type": "string",
-			"defaultValue": "https://www.alphavantage.co/query?function=NEWS_SENTIMENT&tickers=LAZR&apikey=5OPV9WQVZ8HF8FS&INTERVAL=1min"
+			"defaultValue": "https://www.alphavantage.co/query?function=NEWS_SENTIMENT&tickers=LAZR&apikey=5OPV9WQVZ8HF8FS&INTERVAL=60min"
 		},
 		"NVDA_properties_typeProperties_url": {
 			"type": "string",
-			"defaultValue": "https://www.alphavantage.co/query?function=NEWS_SENTIMENT&tickers=NVDA&apikey=5OPV9WQVZ8HF8FS&INTERVAL=1min"
+			"defaultValue": "https://www.alphavantage.co/query?function=NEWS_SENTIMENT&tickers=NVDA&apikey=5OPV9WQVZ8HF8FS&INTERVAL=60min"
 		},
 		"NewsAPI_properties_typeProperties_url": {
 			"type": "string",
@@ -65,11 +65,31 @@
 		},
 		"TSLA_properties_typeProperties_url": {
 			"type": "string",
-			"defaultValue": "https://www.alphavantage.co/query?function=NEWS_SENTIMENT&tickers=TSLA&apikey=5OPV9WQVZ8HF8FS&INTERVAL=1min"
+			"defaultValue": "https://www.alphavantage.co/query?function=NEWS_SENTIMENT&tickers=TSLA&apikey=5OPV9WQVZ8HF8FS&INTERVAL=60min"
 		},
 		"Yahoo_Finance_Historical_Data_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://query1.finance.yahoo.com"
+		},
+		"APPL_Ticker_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=AAPL&interval=1min&datatype=json&apikey=5OPV9WQVZ8HF8FS"
+		},
+		"TSLA_Ticker_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=TSLA&interval=1min&datatype=json&apikey=5OPV9WQVZ8HF8FS"
+		},
+		"NVDA_Ticker_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=NVDA&interval=1min&datatype=json&apikey=5OPV9WQVZ8HF8FS"
+		},
+		"INTC_Ticker_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=INTC&interval=1min&datatype=json&apikey=5OPV9WQVZ8HF8FS"
+		},
+		"LAZR_Ticker_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=LAZR&interval=1min&datatype=json&apikey=5OPV9WQVZ8HF8FS"
 		}
 	},
 	"variables": {
@@ -118,7 +138,7 @@
 						},
 						"inputs": [
 							{
-								"referenceName": "AAPL",
+								"referenceName": "AAPL_Ticker",
 								"type": "DatasetReference",
 								"parameters": {}
 							}
@@ -167,7 +187,7 @@
 						},
 						"inputs": [
 							{
-								"referenceName": "TSLA",
+								"referenceName": "TSLA_Ticker",
 								"type": "DatasetReference",
 								"parameters": {}
 							}
@@ -216,7 +236,7 @@
 						},
 						"inputs": [
 							{
-								"referenceName": "NVDA",
+								"referenceName": "NVDA_Ticker",
 								"type": "DatasetReference",
 								"parameters": {}
 							}
@@ -265,7 +285,7 @@
 						},
 						"inputs": [
 							{
-								"referenceName": "INTC",
+								"referenceName": "INTC_Ticker",
 								"type": "DatasetReference",
 								"parameters": {}
 							}
@@ -314,7 +334,7 @@
 						},
 						"inputs": [
 							{
-								"referenceName": "LAZR",
+								"referenceName": "LAZR_Ticker",
 								"type": "DatasetReference",
 								"parameters": {}
 							}
@@ -335,15 +355,15 @@
 				"lastPublishTime": "2024-11-05T23:49:41Z"
 			},
 			"dependsOn": [
-				"[concat(variables('factoryId'), '/datasets/AAPL')]",
+				"[concat(variables('factoryId'), '/datasets/AAPL_Ticker')]",
 				"[concat(variables('factoryId'), '/datasets/AAPL_Ticker_Data')]",
-				"[concat(variables('factoryId'), '/datasets/TSLA')]",
+				"[concat(variables('factoryId'), '/datasets/TSLA_Ticker')]",
 				"[concat(variables('factoryId'), '/datasets/TSLA_Ticker_Data')]",
-				"[concat(variables('factoryId'), '/datasets/NVDA')]",
+				"[concat(variables('factoryId'), '/datasets/NVDA_Ticker')]",
 				"[concat(variables('factoryId'), '/datasets/NVDA_Ticker_Data')]",
-				"[concat(variables('factoryId'), '/datasets/INTC')]",
+				"[concat(variables('factoryId'), '/datasets/INTC_Ticker')]",
 				"[concat(variables('factoryId'), '/datasets/INTC_Ticker_Data')]",
-				"[concat(variables('factoryId'), '/datasets/LAZR')]",
+				"[concat(variables('factoryId'), '/datasets/LAZR_Ticker')]",
 				"[concat(variables('factoryId'), '/datasets/LAZR_Ticker_Data')]"
 			]
 		},
@@ -1437,6 +1457,191 @@
 			},
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/pipelines/Alpha_Vantage_News_API')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/APPL_Ticker')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "HttpServer",
+				"typeProperties": {
+					"url": "[parameters('APPL_Ticker_properties_typeProperties_url')]",
+					"enableServerCertificateValidation": true,
+					"authenticationType": "Anonymous"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/AAPL_Ticker')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "APPL_Ticker",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "Json",
+				"typeProperties": {
+					"location": {
+						"type": "HttpServerLocation"
+					}
+				},
+				"schema": {}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/APPL_Ticker')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/TSLA_Ticker')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "HttpServer",
+				"typeProperties": {
+					"url": "[parameters('TSLA_Ticker_properties_typeProperties_url')]",
+					"enableServerCertificateValidation": true,
+					"authenticationType": "Anonymous"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/TSLA_Ticker')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "TSLA_Ticker",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "Json",
+				"typeProperties": {
+					"location": {
+						"type": "HttpServerLocation"
+					}
+				},
+				"schema": {}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/TSLA_Ticker')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/NVDA_Ticker')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "HttpServer",
+				"typeProperties": {
+					"url": "[parameters('NVDA_Ticker_properties_typeProperties_url')]",
+					"enableServerCertificateValidation": true,
+					"authenticationType": "Anonymous"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/NVDA_Ticker')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "NVDA_Ticker",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "Json",
+				"typeProperties": {
+					"location": {
+						"type": "HttpServerLocation"
+					}
+				},
+				"schema": {}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/NVDA_Ticker')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/INTC_Ticker')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "HttpServer",
+				"typeProperties": {
+					"url": "[parameters('INTC_Ticker_properties_typeProperties_url')]",
+					"enableServerCertificateValidation": true,
+					"authenticationType": "Anonymous"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/INTC_Ticker')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "INTC_Ticker",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "Json",
+				"typeProperties": {
+					"location": {
+						"type": "HttpServerLocation"
+					}
+				},
+				"schema": {}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/INTC_Ticker')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/LAZR_Ticker')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "HttpServer",
+				"typeProperties": {
+					"url": "[parameters('LAZR_Ticker_properties_typeProperties_url')]",
+					"enableServerCertificateValidation": true,
+					"authenticationType": "Anonymous"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/LAZR_Ticker')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "LAZR_Ticker",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "Json",
+				"typeProperties": {
+					"location": {
+						"type": "HttpServerLocation"
+					}
+				},
+				"schema": {}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/LAZR_Ticker')]"
 			]
 		}
 	]

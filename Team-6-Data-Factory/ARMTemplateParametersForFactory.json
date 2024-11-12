@@ -21,7 +21,7 @@
 			"value": ""
 		},
 		"AAPL_properties_typeProperties_url": {
-			"value": "https://www.alphavantage.co/query?function=NEWS_SENTIMENT&tickers=AAPL&apikey=5OPV9WQVZ8HF8FS&INTERVAL=1min"
+			"value": "https://www.alphavantage.co/query?function=NEWS_SENTIMENT&tickers=AAPL&apikey=5OPV9WQVZ8HF8FS&INTERVAL=60min"
 		},
 		"Alpha_Vantage_Historical _Finance_Data_properties_typeProperties_url": {
 			"value": "https://www.alphavantage.co"
@@ -33,13 +33,13 @@
 			"value": "https://team6storageaccount.dfs.core.windows.net/"
 		},
 		"INTC_properties_typeProperties_url": {
-			"value": "https://www.alphavantage.co/query?function=NEWS_SENTIMENT&tickers=INTC&apikey=5OPV9WQVZ8HF8FS&INTERVAL=1min"
+			"value": "https://www.alphavantage.co/query?function=NEWS_SENTIMENT&tickers=INTC&apikey=5OPV9WQVZ8HF8FS&INTERVAL=60min"
 		},
 		"LAZR_properties_typeProperties_url": {
-			"value": "https://www.alphavantage.co/query?function=NEWS_SENTIMENT&tickers=LAZR&apikey=5OPV9WQVZ8HF8FS&INTERVAL=1min"
+			"value": "https://www.alphavantage.co/query?function=NEWS_SENTIMENT&tickers=LAZR&apikey=5OPV9WQVZ8HF8FS&INTERVAL=60min"
 		},
 		"NVDA_properties_typeProperties_url": {
-			"value": "https://www.alphavantage.co/query?function=NEWS_SENTIMENT&tickers=NVDA&apikey=5OPV9WQVZ8HF8FS&INTERVAL=1min"
+			"value": "https://www.alphavantage.co/query?function=NEWS_SENTIMENT&tickers=NVDA&apikey=5OPV9WQVZ8HF8FS&INTERVAL=60min"
 		},
 		"NewsAPI_properties_typeProperties_url": {
 			"value": "https://team6storageaccount.dfs.core.windows.net/"
@@ -48,10 +48,25 @@
 			"value": "https://team6storageaccount1.dfs.core.windows.net/"
 		},
 		"TSLA_properties_typeProperties_url": {
-			"value": "https://www.alphavantage.co/query?function=NEWS_SENTIMENT&tickers=TSLA&apikey=5OPV9WQVZ8HF8FS&INTERVAL=1min"
+			"value": "https://www.alphavantage.co/query?function=NEWS_SENTIMENT&tickers=TSLA&apikey=5OPV9WQVZ8HF8FS&INTERVAL=60min"
 		},
 		"Yahoo_Finance_Historical_Data_properties_typeProperties_url": {
 			"value": "https://query1.finance.yahoo.com"
+		},
+		"APPL_Ticker_properties_typeProperties_url": {
+			"value": "https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=AAPL&interval=1min&datatype=json&apikey=5OPV9WQVZ8HF8FS"
+		},
+		"TSLA_Ticker_properties_typeProperties_url": {
+			"value": "https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=TSLA&interval=1min&datatype=json&apikey=5OPV9WQVZ8HF8FS"
+		},
+		"NVDA_Ticker_properties_typeProperties_url": {
+			"value": "https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=NVDA&interval=1min&datatype=json&apikey=5OPV9WQVZ8HF8FS"
+		},
+		"INTC_Ticker_properties_typeProperties_url": {
+			"value": "https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=INTC&interval=1min&datatype=json&apikey=5OPV9WQVZ8HF8FS"
+		},
+		"LAZR_Ticker_properties_typeProperties_url": {
+			"value": "https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=LAZR&interval=1min&datatype=json&apikey=5OPV9WQVZ8HF8FS"
 		}
 	}
 }

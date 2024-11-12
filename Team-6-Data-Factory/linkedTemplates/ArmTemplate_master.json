@@ -29,7 +29,7 @@
 		},
 		"AAPL_properties_typeProperties_url": {
 			"type": "string",
-			"defaultValue": "https://www.alphavantage.co/query?function=NEWS_SENTIMENT&tickers=AAPL&apikey=5OPV9WQVZ8HF8FS&INTERVAL=1min"
+			"defaultValue": "https://www.alphavantage.co/query?function=NEWS_SENTIMENT&tickers=AAPL&apikey=5OPV9WQVZ8HF8FS&INTERVAL=60min"
 		},
 		"Alpha_Vantage_Historical _Finance_Data_properties_typeProperties_url": {
 			"type": "string",
@@ -45,15 +45,15 @@
 		},
 		"INTC_properties_typeProperties_url": {
 			"type": "string",
-			"defaultValue": "https://www.alphavantage.co/query?function=NEWS_SENTIMENT&tickers=INTC&apikey=5OPV9WQVZ8HF8FS&INTERVAL=1min"
+			"defaultValue": "https://www.alphavantage.co/query?function=NEWS_SENTIMENT&tickers=INTC&apikey=5OPV9WQVZ8HF8FS&INTERVAL=60min"
 		},
 		"LAZR_properties_typeProperties_url": {
 			"type": "string",
-			"defaultValue": "https://www.alphavantage.co/query?function=NEWS_SENTIMENT&tickers=LAZR&apikey=5OPV9WQVZ8HF8FS&INTERVAL=1min"
+			"defaultValue": "https://www.alphavantage.co/query?function=NEWS_SENTIMENT&tickers=LAZR&apikey=5OPV9WQVZ8HF8FS&INTERVAL=60min"
 		},
 		"NVDA_properties_typeProperties_url": {
 			"type": "string",
-			"defaultValue": "https://www.alphavantage.co/query?function=NEWS_SENTIMENT&tickers=NVDA&apikey=5OPV9WQVZ8HF8FS&INTERVAL=1min"
+			"defaultValue": "https://www.alphavantage.co/query?function=NEWS_SENTIMENT&tickers=NVDA&apikey=5OPV9WQVZ8HF8FS&INTERVAL=60min"
 		},
 		"NewsAPI_properties_typeProperties_url": {
 			"type": "string",
@@ -65,11 +65,31 @@
 		},
 		"TSLA_properties_typeProperties_url": {
 			"type": "string",
-			"defaultValue": "https://www.alphavantage.co/query?function=NEWS_SENTIMENT&tickers=TSLA&apikey=5OPV9WQVZ8HF8FS&INTERVAL=1min"
+			"defaultValue": "https://www.alphavantage.co/query?function=NEWS_SENTIMENT&tickers=TSLA&apikey=5OPV9WQVZ8HF8FS&INTERVAL=60min"
 		},
 		"Yahoo_Finance_Historical_Data_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://query1.finance.yahoo.com"
+		},
+		"APPL_Ticker_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=AAPL&interval=1min&datatype=json&apikey=5OPV9WQVZ8HF8FS"
+		},
+		"TSLA_Ticker_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=TSLA&interval=1min&datatype=json&apikey=5OPV9WQVZ8HF8FS"
+		},
+		"NVDA_Ticker_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=NVDA&interval=1min&datatype=json&apikey=5OPV9WQVZ8HF8FS"
+		},
+		"INTC_Ticker_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=INTC&interval=1min&datatype=json&apikey=5OPV9WQVZ8HF8FS"
+		},
+		"LAZR_Ticker_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=LAZR&interval=1min&datatype=json&apikey=5OPV9WQVZ8HF8FS"
 		},
 		"containerUri": {
 			"type": "string",
@@ -145,6 +165,21 @@
 					},
 					"Yahoo_Finance_Historical_Data_properties_typeProperties_url": {
 						"value": "[parameters('Yahoo_Finance_Historical_Data_properties_typeProperties_url')]"
+					},
+					"APPL_Ticker_properties_typeProperties_url": {
+						"value": "[parameters('APPL_Ticker_properties_typeProperties_url')]"
+					},
+					"TSLA_Ticker_properties_typeProperties_url": {
+						"value": "[parameters('TSLA_Ticker_properties_typeProperties_url')]"
+					},
+					"NVDA_Ticker_properties_typeProperties_url": {
+						"value": "[parameters('NVDA_Ticker_properties_typeProperties_url')]"
+					},
+					"INTC_Ticker_properties_typeProperties_url": {
+						"value": "[parameters('INTC_Ticker_properties_typeProperties_url')]"
+					},
+					"LAZR_Ticker_properties_typeProperties_url": {
+						"value": "[parameters('LAZR_Ticker_properties_typeProperties_url')]"
 					}
 				}
 			},
@@ -168,6 +203,26 @@
 			},
 			"dependsOn": [
 				"[resourceId('Microsoft.Resources/deployments', 'Team-6-Data-Factory_ArmTemplate_0')]"
+			]
+		},
+		{
+			"name": "Team-6-Data-Factory_ArmTemplate_2",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2024-03-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_2.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'Team-6-Data-Factory_ArmTemplate_1')]"
 			]
 		}
 	]

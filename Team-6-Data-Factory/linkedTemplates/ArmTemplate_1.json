@@ -13,6 +13,114 @@
 	},
 	"resources": [
 		{
+			"name": "[concat(parameters('factoryName'), '/Finance_Historical_Data_Output')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "Yahoo_Finance_Historical_Data",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "Json",
+				"typeProperties": {
+					"location": {
+						"type": "HttpServerLocation",
+						"relativeUrl": {
+							"value": "v7/finance/download/AAPL?period1=1609459200&period2=1640995200&interval=1d&events=history\n",
+							"type": "Expression"
+						}
+					}
+				},
+				"schema": {}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/INTC')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "INTC",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "Json",
+				"typeProperties": {
+					"location": {
+						"type": "HttpServerLocation"
+					}
+				},
+				"schema": {}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/INTC_Ticker_Data')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "NewsAPI1",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "Json",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobFSLocation",
+						"folderPath": "Bronze/Ticker_Data/INTC_Data",
+						"fileSystem": "storage"
+					}
+				},
+				"schema": {}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/LAZR')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "LAZR",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "Json",
+				"typeProperties": {
+					"location": {
+						"type": "HttpServerLocation"
+					}
+				},
+				"schema": {}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/LAZR_Ticker_Data')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "NewsAPI1",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "Json",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobFSLocation",
+						"folderPath": "Bronze/Ticker_Data/LAZR_Data",
+						"fileSystem": "storage"
+					}
+				},
+				"schema": {}
+			},
+			"dependsOn": []
+		},
+		{
 			"name": "[concat(parameters('factoryName'), '/NVDA')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
@@ -337,640 +445,104 @@
 			"dependsOn": []
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/Alpha_Vantage_Historical_Finance_Data_Pipeline')]",
-			"type": "Microsoft.DataFactory/factories/pipelines",
+			"name": "[concat(parameters('factoryName'), '/AAPL_Ticker')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
 			"properties": {
-				"activities": [
-					{
-						"name": "AAPL_Ticker",
-						"type": "Copy",
-						"dependsOn": [],
-						"policy": {
-							"timeout": "0.12:00:00",
-							"retry": 0,
-							"retryIntervalInSeconds": 30,
-							"secureOutput": false,
-							"secureInput": false
-						},
-						"userProperties": [],
-						"typeProperties": {
-							"source": {
-								"type": "JsonSource",
-								"storeSettings": {
-									"type": "HttpReadSettings",
-									"requestMethod": "GET"
-								},
-								"formatSettings": {
-									"type": "JsonReadSettings"
-								}
-							},
-							"sink": {
-								"type": "JsonSink",
-								"storeSettings": {
-									"type": "AzureBlobFSWriteSettings"
-								},
-								"formatSettings": {
-									"type": "JsonWriteSettings"
-								}
-							},
-							"enableStaging": false
-						},
-						"inputs": [
-							{
-								"referenceName": "AAPL",
-								"type": "DatasetReference",
-								"parameters": {}
-							}
-						],
-						"outputs": [
-							{
-								"referenceName": "AAPL_Ticker_Data",
-								"type": "DatasetReference",
-								"parameters": {}
-							}
-						]
-					},
-					{
-						"name": "TSLA_Ticker",
-						"type": "Copy",
-						"dependsOn": [],
-						"policy": {
-							"timeout": "0.12:00:00",
-							"retry": 0,
-							"retryIntervalInSeconds": 30,
-							"secureOutput": false,
-							"secureInput": false
-						},
-						"userProperties": [],
-						"typeProperties": {
-							"source": {
-								"type": "JsonSource",
-								"storeSettings": {
-									"type": "HttpReadSettings",
-									"requestMethod": "GET"
-								},
-								"formatSettings": {
-									"type": "JsonReadSettings"
-								}
-							},
-							"sink": {
-								"type": "JsonSink",
-								"storeSettings": {
-									"type": "AzureBlobFSWriteSettings"
-								},
-								"formatSettings": {
-									"type": "JsonWriteSettings"
-								}
-							},
-							"enableStaging": false
-						},
-						"inputs": [
-							{
-								"referenceName": "TSLA",
-								"type": "DatasetReference",
-								"parameters": {}
-							}
-						],
-						"outputs": [
-							{
-								"referenceName": "TSLA_Ticker_Data",
-								"type": "DatasetReference",
-								"parameters": {}
-							}
-						]
-					},
-					{
-						"name": "NVDA_Ticker",
-						"type": "Copy",
-						"dependsOn": [],
-						"policy": {
-							"timeout": "0.12:00:00",
-							"retry": 0,
-							"retryIntervalInSeconds": 30,
-							"secureOutput": false,
-							"secureInput": false
-						},
-						"userProperties": [],
-						"typeProperties": {
-							"source": {
-								"type": "JsonSource",
-								"storeSettings": {
-									"type": "HttpReadSettings",
-									"requestMethod": "GET"
-								},
-								"formatSettings": {
-									"type": "JsonReadSettings"
-								}
-							},
-							"sink": {
-								"type": "JsonSink",
-								"storeSettings": {
-									"type": "AzureBlobFSWriteSettings"
-								},
-								"formatSettings": {
-									"type": "JsonWriteSettings"
-								}
-							},
-							"enableStaging": false
-						},
-						"inputs": [
-							{
-								"referenceName": "NVDA",
-								"type": "DatasetReference",
-								"parameters": {}
-							}
-						],
-						"outputs": [
-							{
-								"referenceName": "NVDA_Ticker_Data",
-								"type": "DatasetReference",
-								"parameters": {}
-							}
-						]
-					},
-					{
-						"name": "INTC_Ticker",
-						"type": "Copy",
-						"dependsOn": [],
-						"policy": {
-							"timeout": "0.12:00:00",
-							"retry": 0,
-							"retryIntervalInSeconds": 30,
-							"secureOutput": false,
-							"secureInput": false
-						},
-						"userProperties": [],
-						"typeProperties": {
-							"source": {
-								"type": "JsonSource",
-								"storeSettings": {
-									"type": "HttpReadSettings",
-									"requestMethod": "GET"
-								},
-								"formatSettings": {
-									"type": "JsonReadSettings"
-								}
-							},
-							"sink": {
-								"type": "JsonSink",
-								"storeSettings": {
-									"type": "AzureBlobFSWriteSettings"
-								},
-								"formatSettings": {
-									"type": "JsonWriteSettings"
-								}
-							},
-							"enableStaging": false
-						},
-						"inputs": [
-							{
-								"referenceName": "INTC",
-								"type": "DatasetReference",
-								"parameters": {}
-							}
-						],
-						"outputs": [
-							{
-								"referenceName": "INTC_Ticker_Data",
-								"type": "DatasetReference",
-								"parameters": {}
-							}
-						]
-					},
-					{
-						"name": "LAZR_Ticker",
-						"type": "Copy",
-						"dependsOn": [],
-						"policy": {
-							"timeout": "0.12:00:00",
-							"retry": 0,
-							"retryIntervalInSeconds": 30,
-							"secureOutput": false,
-							"secureInput": false
-						},
-						"userProperties": [],
-						"typeProperties": {
-							"source": {
-								"type": "JsonSource",
-								"storeSettings": {
-									"type": "HttpReadSettings",
-									"requestMethod": "GET"
-								},
-								"formatSettings": {
-									"type": "JsonReadSettings"
-								}
-							},
-							"sink": {
-								"type": "JsonSink",
-								"storeSettings": {
-									"type": "AzureBlobFSWriteSettings"
-								},
-								"formatSettings": {
-									"type": "JsonWriteSettings"
-								}
-							},
-							"enableStaging": false
-						},
-						"inputs": [
-							{
-								"referenceName": "LAZR",
-								"type": "DatasetReference",
-								"parameters": {}
-							}
-						],
-						"outputs": [
-							{
-								"referenceName": "LAZR_Ticker_Data",
-								"type": "DatasetReference",
-								"parameters": {}
-							}
-						]
-					}
-				],
-				"policy": {
-					"elapsedTimeMetric": {}
+				"linkedServiceName": {
+					"referenceName": "APPL_Ticker",
+					"type": "LinkedServiceReference"
 				},
 				"annotations": [],
-				"lastPublishTime": "2024-11-05T23:49:41Z"
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/datasets/TSLA')]",
-				"[concat(variables('factoryId'), '/datasets/TSLA_Ticker_Data')]",
-				"[concat(variables('factoryId'), '/datasets/NVDA')]",
-				"[concat(variables('factoryId'), '/datasets/NVDA_Ticker_Data')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/Alpha_Vantage_News_API')]",
-			"type": "Microsoft.DataFactory/factories/pipelines",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"activities": [
-					{
-						"name": "AAPL",
-						"type": "Copy",
-						"dependsOn": [],
-						"policy": {
-							"timeout": "0.12:00:00",
-							"retry": 0,
-							"retryIntervalInSeconds": 30,
-							"secureOutput": false,
-							"secureInput": false
-						},
-						"userProperties": [],
-						"typeProperties": {
-							"source": {
-								"type": "JsonSource",
-								"storeSettings": {
-									"type": "HttpReadSettings",
-									"requestMethod": "GET"
-								},
-								"formatSettings": {
-									"type": "JsonReadSettings"
-								}
-							},
-							"sink": {
-								"type": "JsonSink",
-								"storeSettings": {
-									"type": "AzureBlobFSWriteSettings",
-									"copyBehavior": "FlattenHierarchy"
-								},
-								"formatSettings": {
-									"type": "JsonWriteSettings"
-								}
-							},
-							"enableStaging": false
-						},
-						"inputs": [
-							{
-								"referenceName": "AAPL",
-								"type": "DatasetReference",
-								"parameters": {}
-							}
-						],
-						"outputs": [
-							{
-								"referenceName": "Sink_Data_AAPL",
-								"type": "DatasetReference",
-								"parameters": {}
-							}
-						]
-					},
-					{
-						"name": "TSLA",
-						"type": "Copy",
-						"dependsOn": [],
-						"policy": {
-							"timeout": "0.12:00:00",
-							"retry": 0,
-							"retryIntervalInSeconds": 30,
-							"secureOutput": false,
-							"secureInput": false
-						},
-						"userProperties": [],
-						"typeProperties": {
-							"source": {
-								"type": "JsonSource",
-								"storeSettings": {
-									"type": "HttpReadSettings",
-									"requestMethod": "GET"
-								},
-								"formatSettings": {
-									"type": "JsonReadSettings"
-								}
-							},
-							"sink": {
-								"type": "JsonSink",
-								"storeSettings": {
-									"type": "AzureBlobFSWriteSettings",
-									"copyBehavior": "FlattenHierarchy"
-								},
-								"formatSettings": {
-									"type": "JsonWriteSettings"
-								}
-							},
-							"enableStaging": false
-						},
-						"inputs": [
-							{
-								"referenceName": "TSLA",
-								"type": "DatasetReference",
-								"parameters": {}
-							}
-						],
-						"outputs": [
-							{
-								"referenceName": "Sink_Data_TSLA",
-								"type": "DatasetReference",
-								"parameters": {}
-							}
-						]
-					},
-					{
-						"name": "NVDA",
-						"type": "Copy",
-						"dependsOn": [],
-						"policy": {
-							"timeout": "0.12:00:00",
-							"retry": 0,
-							"retryIntervalInSeconds": 30,
-							"secureOutput": false,
-							"secureInput": false
-						},
-						"userProperties": [],
-						"typeProperties": {
-							"source": {
-								"type": "JsonSource",
-								"storeSettings": {
-									"type": "HttpReadSettings",
-									"requestMethod": "GET"
-								},
-								"formatSettings": {
-									"type": "JsonReadSettings"
-								}
-							},
-							"sink": {
-								"type": "JsonSink",
-								"storeSettings": {
-									"type": "AzureBlobFSWriteSettings",
-									"copyBehavior": "FlattenHierarchy"
-								},
-								"formatSettings": {
-									"type": "JsonWriteSettings"
-								}
-							},
-							"enableStaging": false
-						},
-						"inputs": [
-							{
-								"referenceName": "NVDA",
-								"type": "DatasetReference",
-								"parameters": {}
-							}
-						],
-						"outputs": [
-							{
-								"referenceName": "Sink_Data_NVDA",
-								"type": "DatasetReference",
-								"parameters": {}
-							}
-						]
-					},
-					{
-						"name": "LAZR",
-						"type": "Copy",
-						"dependsOn": [],
-						"policy": {
-							"timeout": "0.12:00:00",
-							"retry": 0,
-							"retryIntervalInSeconds": 30,
-							"secureOutput": false,
-							"secureInput": false
-						},
-						"userProperties": [],
-						"typeProperties": {
-							"source": {
-								"type": "JsonSource",
-								"storeSettings": {
-									"type": "HttpReadSettings",
-									"requestMethod": "GET"
-								},
-								"formatSettings": {
-									"type": "JsonReadSettings"
-								}
-							},
-							"sink": {
-								"type": "JsonSink",
-								"storeSettings": {
-									"type": "AzureBlobFSWriteSettings",
-									"copyBehavior": "FlattenHierarchy"
-								},
-								"formatSettings": {
-									"type": "JsonWriteSettings"
-								}
-							},
-							"enableStaging": false
-						},
-						"inputs": [
-							{
-								"referenceName": "LAZR",
-								"type": "DatasetReference",
-								"parameters": {}
-							}
-						],
-						"outputs": [
-							{
-								"referenceName": "Sink_Data_LAZR",
-								"type": "DatasetReference",
-								"parameters": {}
-							}
-						]
-					},
-					{
-						"name": "INTC",
-						"type": "Copy",
-						"dependsOn": [],
-						"policy": {
-							"timeout": "0.12:00:00",
-							"retry": 0,
-							"retryIntervalInSeconds": 30,
-							"secureOutput": false,
-							"secureInput": false
-						},
-						"userProperties": [],
-						"typeProperties": {
-							"source": {
-								"type": "JsonSource",
-								"storeSettings": {
-									"type": "HttpReadSettings",
-									"requestMethod": "GET"
-								},
-								"formatSettings": {
-									"type": "JsonReadSettings"
-								}
-							},
-							"sink": {
-								"type": "JsonSink",
-								"storeSettings": {
-									"type": "AzureBlobFSWriteSettings",
-									"copyBehavior": "FlattenHierarchy"
-								},
-								"formatSettings": {
-									"type": "JsonWriteSettings"
-								}
-							},
-							"enableStaging": false
-						},
-						"inputs": [
-							{
-								"referenceName": "INTC",
-								"type": "DatasetReference",
-								"parameters": {}
-							}
-						],
-						"outputs": [
-							{
-								"referenceName": "Sink_Data_INTC",
-								"type": "DatasetReference",
-								"parameters": {}
-							}
-						]
-					}
-				],
-				"policy": {
-					"elapsedTimeMetric": {}
-				},
-				"annotations": [],
-				"lastPublishTime": "2024-11-06T18:46:07Z"
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/datasets/Sink_Data_AAPL')]",
-				"[concat(variables('factoryId'), '/datasets/TSLA')]",
-				"[concat(variables('factoryId'), '/datasets/Sink_Data_TSLA')]",
-				"[concat(variables('factoryId'), '/datasets/NVDA')]",
-				"[concat(variables('factoryId'), '/datasets/Sink_Data_NVDA')]",
-				"[concat(variables('factoryId'), '/datasets/Sink_Data_LAZR')]",
-				"[concat(variables('factoryId'), '/datasets/Sink_Data_INTC')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/Yahoo_Finance_Historical_Data_Pipeline')]",
-			"type": "Microsoft.DataFactory/factories/pipelines",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"activities": [
-					{
-						"name": "Copy data1",
-						"type": "Copy",
-						"dependsOn": [],
-						"policy": {
-							"timeout": "0.12:00:00",
-							"retry": 0,
-							"retryIntervalInSeconds": 30,
-							"secureOutput": false,
-							"secureInput": false
-						},
-						"userProperties": [],
-						"typeProperties": {
-							"source": {
-								"type": "JsonSource",
-								"storeSettings": {
-									"type": "HttpReadSettings",
-									"requestMethod": "GET"
-								},
-								"formatSettings": {
-									"type": "JsonReadSettings"
-								}
-							},
-							"sink": {
-								"type": "JsonSink",
-								"storeSettings": {
-									"type": "AzureBlobFSWriteSettings"
-								},
-								"formatSettings": {
-									"type": "JsonWriteSettings"
-								}
-							},
-							"enableStaging": false
-						},
-						"inputs": [
-							{
-								"referenceName": "Finance_Historical_Data_Output",
-								"type": "DatasetReference",
-								"parameters": {}
-							}
-						],
-						"outputs": [
-							{
-								"referenceName": "Sink_Data_AAPL",
-								"type": "DatasetReference",
-								"parameters": {}
-							}
-						]
-					}
-				],
-				"policy": {
-					"elapsedTimeMetric": {}
-				},
-				"annotations": [],
-				"lastPublishTime": "2024-11-05T23:49:41Z"
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/datasets/Sink_Data_AAPL')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/scheduledrun')]",
-			"type": "Microsoft.DataFactory/factories/triggers",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"description": "Runs pipeline every day to gather sentiment data for analysis",
-				"annotations": [],
-				"runtimeState": "Started",
-				"pipelines": [
-					{
-						"pipelineReference": {
-							"referenceName": "Alpha_Vantage_News_API",
-							"type": "PipelineReference"
-						},
-						"parameters": {}
-					}
-				],
-				"type": "ScheduleTrigger",
+				"type": "Json",
 				"typeProperties": {
-					"recurrence": {
-						"frequency": "Day",
-						"interval": 1,
-						"startTime": "2024-11-06T18:23:00",
-						"endTime": "2024-12-20T18:23:00",
-						"timeZone": "Eastern Standard Time"
+					"location": {
+						"type": "HttpServerLocation"
 					}
-				}
+				},
+				"schema": {}
 			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/pipelines/Alpha_Vantage_News_API')]"
-			]
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/TSLA_Ticker')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "TSLA_Ticker",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "Json",
+				"typeProperties": {
+					"location": {
+						"type": "HttpServerLocation"
+					}
+				},
+				"schema": {}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/NVDA_Ticker')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "NVDA_Ticker",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "Json",
+				"typeProperties": {
+					"location": {
+						"type": "HttpServerLocation"
+					}
+				},
+				"schema": {}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/INTC_Ticker')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "INTC_Ticker",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "Json",
+				"typeProperties": {
+					"location": {
+						"type": "HttpServerLocation"
+					}
+				},
+				"schema": {}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/LAZR_Ticker')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "LAZR_Ticker",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "Json",
+				"typeProperties": {
+					"location": {
+						"type": "HttpServerLocation"
+					}
+				},
+				"schema": {}
+			},
+			"dependsOn": []
 		}
 	]
 }
