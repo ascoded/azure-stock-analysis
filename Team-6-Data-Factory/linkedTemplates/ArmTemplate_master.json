@@ -29,7 +29,7 @@
 		},
 		"AAPL_properties_typeProperties_url": {
 			"type": "string",
-			"defaultValue": "https://www.alphavantage.co/query?function=NEWS_SENTIMENT&tickers=AAPL&apikey=5OPV9WQVZ8HF8FS&INTERVAL=60min"
+			"defaultValue": "https://www.alphavantage.co/query?function=NEWS_SENTIMENT&tickers=AAPL&apikey=5OPV9WQVZ8HF8FS&INTERVAL=1min"
 		},
 		"Alpha_Vantage_Historical _Finance_Data_properties_typeProperties_url": {
 			"type": "string",
@@ -45,15 +45,15 @@
 		},
 		"INTC_properties_typeProperties_url": {
 			"type": "string",
-			"defaultValue": "https://www.alphavantage.co/query?function=NEWS_SENTIMENT&tickers=INTC&apikey=5OPV9WQVZ8HF8FS&INTERVAL=60min"
+			"defaultValue": "https://www.alphavantage.co/query?function=NEWS_SENTIMENT&tickers=INTC&apikey=5OPV9WQVZ8HF8FS&INTERVAL=1min"
 		},
 		"LAZR_properties_typeProperties_url": {
 			"type": "string",
-			"defaultValue": "https://www.alphavantage.co/query?function=NEWS_SENTIMENT&tickers=LAZR&apikey=5OPV9WQVZ8HF8FS&INTERVAL=60min"
+			"defaultValue": "https://www.alphavantage.co/query?function=NEWS_SENTIMENT&tickers=LAZR&apikey=5OPV9WQVZ8HF8FS&INTERVAL=1min"
 		},
 		"NVDA_properties_typeProperties_url": {
 			"type": "string",
-			"defaultValue": "https://www.alphavantage.co/query?function=NEWS_SENTIMENT&tickers=NVDA&apikey=5OPV9WQVZ8HF8FS&INTERVAL=60min"
+			"defaultValue": "https://www.alphavantage.co/query?function=NEWS_SENTIMENT&tickers=NVDA&apikey=5OPV9WQVZ8HF8FS&INTERVAL=1min"
 		},
 		"NewsAPI_properties_typeProperties_url": {
 			"type": "string",
@@ -65,7 +65,7 @@
 		},
 		"TSLA_properties_typeProperties_url": {
 			"type": "string",
-			"defaultValue": "https://www.alphavantage.co/query?function=NEWS_SENTIMENT&tickers=TSLA&apikey=5OPV9WQVZ8HF8FS&INTERVAL=60min"
+			"defaultValue": "https://www.alphavantage.co/query?function=NEWS_SENTIMENT&tickers=TSLA&apikey=5OPV9WQVZ8HF8FS&INTERVAL=1min"
 		},
 		"Yahoo_Finance_Historical_Data_properties_typeProperties_url": {
 			"type": "string",
