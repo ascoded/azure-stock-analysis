@@ -1,0 +1,19 @@
+{
+	"name": "INTC_Alpha_Vantage",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Alpha_Vantage_Historical _Finance_Data",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "HttpServerLocation",
+				"relativeUrl": "/query?function=TIME_SERIES_DAILY&symbol=INTC&outputsize=full&apikey=5OPV9WQVZ8HF8F8S"
+			}
+		},
+		"schema": {}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}
