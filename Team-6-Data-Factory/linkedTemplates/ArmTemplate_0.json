@@ -31,6 +31,10 @@
 			"type": "string",
 			"defaultValue": "https://www.alphavantage.co/query?function=NEWS_SENTIMENT&tickers=AAPL&apikey=5OPV9WQVZ8HF8FS&INTERVAL=60min"
 		},
+		"APPL_Ticker_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=AAPL&interval=1min&datatype=json&apikey=5OPV9WQVZ8HF8FS"
+		},
 		"Alpha_Vantage_Historical _Finance_Data_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://www.alphavantage.co"
@@ -41,19 +45,31 @@
 		},
 		"Finance_Historical_Data_Output_properties_typeProperties_url": {
 			"type": "string",
-			"defaultValue": "https://team6storageaccount.dfs.core.windows.net/"
+			"defaultValue": "https://team6storageaccount1.dfs.core.windows.net/"
 		},
 		"INTC_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://www.alphavantage.co/query?function=NEWS_SENTIMENT&tickers=INTC&apikey=5OPV9WQVZ8HF8FS&INTERVAL=60min"
 		},
+		"INTC_Ticker_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=INTC&interval=1min&datatype=json&apikey=5OPV9WQVZ8HF8FS"
+		},
 		"LAZR_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://www.alphavantage.co/query?function=NEWS_SENTIMENT&tickers=LAZR&apikey=5OPV9WQVZ8HF8FS&INTERVAL=60min"
 		},
+		"LAZR_Ticker_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=LAZR&interval=1min&datatype=json&apikey=5OPV9WQVZ8HF8FS"
+		},
 		"NVDA_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://www.alphavantage.co/query?function=NEWS_SENTIMENT&tickers=NVDA&apikey=5OPV9WQVZ8HF8FS&INTERVAL=60min"
+		},
+		"NVDA_Ticker_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=NVDA&interval=1min&datatype=json&apikey=5OPV9WQVZ8HF8FS"
 		},
 		"NewsAPI_properties_typeProperties_url": {
 			"type": "string",
@@ -67,29 +83,13 @@
 			"type": "string",
 			"defaultValue": "https://www.alphavantage.co/query?function=NEWS_SENTIMENT&tickers=TSLA&apikey=5OPV9WQVZ8HF8FS&INTERVAL=60min"
 		},
-		"Yahoo_Finance_Historical_Data_properties_typeProperties_url": {
-			"type": "string",
-			"defaultValue": "https://query1.finance.yahoo.com"
-		},
-		"APPL_Ticker_properties_typeProperties_url": {
-			"type": "string",
-			"defaultValue": "https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=AAPL&interval=1min&datatype=json&apikey=5OPV9WQVZ8HF8FS"
-		},
 		"TSLA_Ticker_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=TSLA&interval=1min&datatype=json&apikey=5OPV9WQVZ8HF8FS"
 		},
-		"NVDA_Ticker_properties_typeProperties_url": {
+		"Yahoo_Finance_Historical_Data_properties_typeProperties_url": {
 			"type": "string",
-			"defaultValue": "https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=NVDA&interval=1min&datatype=json&apikey=5OPV9WQVZ8HF8FS"
-		},
-		"INTC_Ticker_properties_typeProperties_url": {
-			"type": "string",
-			"defaultValue": "https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=INTC&interval=1min&datatype=json&apikey=5OPV9WQVZ8HF8FS"
-		},
-		"LAZR_Ticker_properties_typeProperties_url": {
-			"type": "string",
-			"defaultValue": "https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=LAZR&interval=1min&datatype=json&apikey=5OPV9WQVZ8HF8FS"
+			"defaultValue": "https://query1.finance.yahoo.com"
 		}
 	},
 	"variables": {
@@ -105,6 +105,21 @@
 				"type": "HttpServer",
 				"typeProperties": {
 					"url": "[parameters('AAPL_properties_typeProperties_url')]",
+					"enableServerCertificateValidation": true,
+					"authenticationType": "Anonymous"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/APPL_Ticker')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "HttpServer",
+				"typeProperties": {
+					"url": "[parameters('APPL_Ticker_properties_typeProperties_url')]",
 					"enableServerCertificateValidation": true,
 					"authenticationType": "Anonymous"
 				}
@@ -189,6 +204,21 @@
 			"dependsOn": []
 		},
 		{
+			"name": "[concat(parameters('factoryName'), '/INTC_Ticker')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "HttpServer",
+				"typeProperties": {
+					"url": "[parameters('INTC_Ticker_properties_typeProperties_url')]",
+					"enableServerCertificateValidation": true,
+					"authenticationType": "Anonymous"
+				}
+			},
+			"dependsOn": []
+		},
+		{
 			"name": "[concat(parameters('factoryName'), '/LAZR')]",
 			"type": "Microsoft.DataFactory/factories/linkedServices",
 			"apiVersion": "2018-06-01",
@@ -204,6 +234,21 @@
 			"dependsOn": []
 		},
 		{
+			"name": "[concat(parameters('factoryName'), '/LAZR_Ticker')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "HttpServer",
+				"typeProperties": {
+					"url": "[parameters('LAZR_Ticker_properties_typeProperties_url')]",
+					"enableServerCertificateValidation": true,
+					"authenticationType": "Anonymous"
+				}
+			},
+			"dependsOn": []
+		},
+		{
 			"name": "[concat(parameters('factoryName'), '/NVDA')]",
 			"type": "Microsoft.DataFactory/factories/linkedServices",
 			"apiVersion": "2018-06-01",
@@ -212,6 +257,21 @@
 				"type": "HttpServer",
 				"typeProperties": {
 					"url": "[parameters('NVDA_properties_typeProperties_url')]",
+					"enableServerCertificateValidation": true,
+					"authenticationType": "Anonymous"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/NVDA_Ticker')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "HttpServer",
+				"typeProperties": {
+					"url": "[parameters('NVDA_Ticker_properties_typeProperties_url')]",
 					"enableServerCertificateValidation": true,
 					"authenticationType": "Anonymous"
 				}
@@ -268,36 +328,6 @@
 			"dependsOn": []
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/Yahoo_Finance_Historical_Data')]",
-			"type": "Microsoft.DataFactory/factories/linkedServices",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"annotations": [],
-				"type": "HttpServer",
-				"typeProperties": {
-					"url": "[parameters('Yahoo_Finance_Historical_Data_properties_typeProperties_url')]",
-					"enableServerCertificateValidation": true,
-					"authenticationType": "Anonymous"
-				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/APPL_Ticker')]",
-			"type": "Microsoft.DataFactory/factories/linkedServices",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"annotations": [],
-				"type": "HttpServer",
-				"typeProperties": {
-					"url": "[parameters('APPL_Ticker_properties_typeProperties_url')]",
-					"enableServerCertificateValidation": true,
-					"authenticationType": "Anonymous"
-				}
-			},
-			"dependsOn": []
-		},
-		{
 			"name": "[concat(parameters('factoryName'), '/TSLA_Ticker')]",
 			"type": "Microsoft.DataFactory/factories/linkedServices",
 			"apiVersion": "2018-06-01",
@@ -313,44 +343,14 @@
 			"dependsOn": []
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/NVDA_Ticker')]",
+			"name": "[concat(parameters('factoryName'), '/Yahoo_Finance_Historical_Data')]",
 			"type": "Microsoft.DataFactory/factories/linkedServices",
 			"apiVersion": "2018-06-01",
 			"properties": {
 				"annotations": [],
 				"type": "HttpServer",
 				"typeProperties": {
-					"url": "[parameters('NVDA_Ticker_properties_typeProperties_url')]",
-					"enableServerCertificateValidation": true,
-					"authenticationType": "Anonymous"
-				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/INTC_Ticker')]",
-			"type": "Microsoft.DataFactory/factories/linkedServices",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"annotations": [],
-				"type": "HttpServer",
-				"typeProperties": {
-					"url": "[parameters('INTC_Ticker_properties_typeProperties_url')]",
-					"enableServerCertificateValidation": true,
-					"authenticationType": "Anonymous"
-				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/LAZR_Ticker')]",
-			"type": "Microsoft.DataFactory/factories/linkedServices",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"annotations": [],
-				"type": "HttpServer",
-				"typeProperties": {
-					"url": "[parameters('LAZR_Ticker_properties_typeProperties_url')]",
+					"url": "[parameters('Yahoo_Finance_Historical_Data_properties_typeProperties_url')]",
 					"enableServerCertificateValidation": true,
 					"authenticationType": "Anonymous"
 				}
@@ -380,6 +380,28 @@
 			]
 		},
 		{
+			"name": "[concat(parameters('factoryName'), '/AAPL_Ticker')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "APPL_Ticker",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "Json",
+				"typeProperties": {
+					"location": {
+						"type": "HttpServerLocation"
+					}
+				},
+				"schema": {}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/APPL_Ticker')]"
+			]
+		},
+		{
 			"name": "[concat(parameters('factoryName'), '/AAPL_Ticker_Data')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
@@ -401,29 +423,6 @@
 			},
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/linkedServices/NewsAPI1')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/Alpha_Vantage')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "Alpha_Vantage_Historical _Finance_Data",
-					"type": "LinkedServiceReference"
-				},
-				"annotations": [],
-				"type": "Json",
-				"typeProperties": {
-					"location": {
-						"type": "HttpServerLocation",
-						"relativeUrl": "/query?function=TIME_SERIES_DAILY&symbol=LAZR&outputsize=full&apikey=5OPV9WQVZ8HF8F8S"
-					}
-				},
-				"schema": {}
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/Alpha_Vantage_Historical _Finance_Data')]"
 			]
 		}
 	]

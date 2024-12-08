@@ -31,6 +31,10 @@
 			"type": "string",
 			"defaultValue": "https://www.alphavantage.co/query?function=NEWS_SENTIMENT&tickers=AAPL&apikey=5OPV9WQVZ8HF8FS&INTERVAL=60min"
 		},
+		"APPL_Ticker_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=AAPL&interval=1min&datatype=json&apikey=5OPV9WQVZ8HF8FS"
+		},
 		"Alpha_Vantage_Historical _Finance_Data_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://www.alphavantage.co"
@@ -41,19 +45,31 @@
 		},
 		"Finance_Historical_Data_Output_properties_typeProperties_url": {
 			"type": "string",
-			"defaultValue": "https://team6storageaccount.dfs.core.windows.net/"
+			"defaultValue": "https://team6storageaccount1.dfs.core.windows.net/"
 		},
 		"INTC_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://www.alphavantage.co/query?function=NEWS_SENTIMENT&tickers=INTC&apikey=5OPV9WQVZ8HF8FS&INTERVAL=60min"
 		},
+		"INTC_Ticker_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=INTC&interval=1min&datatype=json&apikey=5OPV9WQVZ8HF8FS"
+		},
 		"LAZR_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://www.alphavantage.co/query?function=NEWS_SENTIMENT&tickers=LAZR&apikey=5OPV9WQVZ8HF8FS&INTERVAL=60min"
 		},
+		"LAZR_Ticker_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=LAZR&interval=1min&datatype=json&apikey=5OPV9WQVZ8HF8FS"
+		},
 		"NVDA_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://www.alphavantage.co/query?function=NEWS_SENTIMENT&tickers=NVDA&apikey=5OPV9WQVZ8HF8FS&INTERVAL=60min"
+		},
+		"NVDA_Ticker_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=NVDA&interval=1min&datatype=json&apikey=5OPV9WQVZ8HF8FS"
 		},
 		"NewsAPI_properties_typeProperties_url": {
 			"type": "string",
@@ -67,29 +83,13 @@
 			"type": "string",
 			"defaultValue": "https://www.alphavantage.co/query?function=NEWS_SENTIMENT&tickers=TSLA&apikey=5OPV9WQVZ8HF8FS&INTERVAL=60min"
 		},
-		"Yahoo_Finance_Historical_Data_properties_typeProperties_url": {
-			"type": "string",
-			"defaultValue": "https://query1.finance.yahoo.com"
-		},
-		"APPL_Ticker_properties_typeProperties_url": {
-			"type": "string",
-			"defaultValue": "https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=AAPL&interval=1min&datatype=json&apikey=5OPV9WQVZ8HF8FS"
-		},
 		"TSLA_Ticker_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=TSLA&interval=1min&datatype=json&apikey=5OPV9WQVZ8HF8FS"
 		},
-		"NVDA_Ticker_properties_typeProperties_url": {
+		"Yahoo_Finance_Historical_Data_properties_typeProperties_url": {
 			"type": "string",
-			"defaultValue": "https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=NVDA&interval=1min&datatype=json&apikey=5OPV9WQVZ8HF8FS"
-		},
-		"INTC_Ticker_properties_typeProperties_url": {
-			"type": "string",
-			"defaultValue": "https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=INTC&interval=1min&datatype=json&apikey=5OPV9WQVZ8HF8FS"
-		},
-		"LAZR_Ticker_properties_typeProperties_url": {
-			"type": "string",
-			"defaultValue": "https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=LAZR&interval=1min&datatype=json&apikey=5OPV9WQVZ8HF8FS"
+			"defaultValue": "https://query1.finance.yahoo.com"
 		},
 		"containerUri": {
 			"type": "string",
@@ -136,6 +136,9 @@
 					"AAPL_properties_typeProperties_url": {
 						"value": "[parameters('AAPL_properties_typeProperties_url')]"
 					},
+					"APPL_Ticker_properties_typeProperties_url": {
+						"value": "[parameters('APPL_Ticker_properties_typeProperties_url')]"
+					},
 					"Alpha_Vantage_Historical _Finance_Data_properties_typeProperties_url": {
 						"value": "[parameters('Alpha_Vantage_Historical _Finance_Data_properties_typeProperties_url')]"
 					},
@@ -148,11 +151,20 @@
 					"INTC_properties_typeProperties_url": {
 						"value": "[parameters('INTC_properties_typeProperties_url')]"
 					},
+					"INTC_Ticker_properties_typeProperties_url": {
+						"value": "[parameters('INTC_Ticker_properties_typeProperties_url')]"
+					},
 					"LAZR_properties_typeProperties_url": {
 						"value": "[parameters('LAZR_properties_typeProperties_url')]"
 					},
+					"LAZR_Ticker_properties_typeProperties_url": {
+						"value": "[parameters('LAZR_Ticker_properties_typeProperties_url')]"
+					},
 					"NVDA_properties_typeProperties_url": {
 						"value": "[parameters('NVDA_properties_typeProperties_url')]"
+					},
+					"NVDA_Ticker_properties_typeProperties_url": {
+						"value": "[parameters('NVDA_Ticker_properties_typeProperties_url')]"
 					},
 					"NewsAPI_properties_typeProperties_url": {
 						"value": "[parameters('NewsAPI_properties_typeProperties_url')]"
@@ -163,23 +175,11 @@
 					"TSLA_properties_typeProperties_url": {
 						"value": "[parameters('TSLA_properties_typeProperties_url')]"
 					},
-					"Yahoo_Finance_Historical_Data_properties_typeProperties_url": {
-						"value": "[parameters('Yahoo_Finance_Historical_Data_properties_typeProperties_url')]"
-					},
-					"APPL_Ticker_properties_typeProperties_url": {
-						"value": "[parameters('APPL_Ticker_properties_typeProperties_url')]"
-					},
 					"TSLA_Ticker_properties_typeProperties_url": {
 						"value": "[parameters('TSLA_Ticker_properties_typeProperties_url')]"
 					},
-					"NVDA_Ticker_properties_typeProperties_url": {
-						"value": "[parameters('NVDA_Ticker_properties_typeProperties_url')]"
-					},
-					"INTC_Ticker_properties_typeProperties_url": {
-						"value": "[parameters('INTC_Ticker_properties_typeProperties_url')]"
-					},
-					"LAZR_Ticker_properties_typeProperties_url": {
-						"value": "[parameters('LAZR_Ticker_properties_typeProperties_url')]"
+					"Yahoo_Finance_Historical_Data_properties_typeProperties_url": {
+						"value": "[parameters('Yahoo_Finance_Historical_Data_properties_typeProperties_url')]"
 					}
 				}
 			},
