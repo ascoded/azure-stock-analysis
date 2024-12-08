@@ -1,0 +1,19 @@
+{
+	"name": "Historical_Stock_Price_Sink",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Finance_Historical_Data_Output",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"folderPath": "Bronze/Historical Stock Data",
+				"fileSystem": "storage"
+			}
+		},
+		"schema": {}
+	}
+}

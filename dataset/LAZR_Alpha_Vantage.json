@@ -1,5 +1,5 @@
 {
-	"name": "Alpha_Vantage",
+	"name": "LAZR_Alpha_Vantage",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "Alpha_Vantage_Historical _Finance_Data",
